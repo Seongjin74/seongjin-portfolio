@@ -1,170 +1,107 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seongjin's Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f8f9fa;
-            color: #2c3e50;
-        }
-        
-        
-        header {
-            background: linear-gradient(135deg, #2c3e50, #34495e);
-            color: white;
-            padding: 20px 10%;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-        }
-        
-        nav ul {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-        
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s;
-        }
-        
-        nav ul li a:hover {
-            color: #1abc9c;
-        }
-        
-        
-        section {
-            padding: 60px 10%;
-            text-align: center;
-        }
-        
-        #about {
-            background: #ecf0f1;
-            padding: 80px 10%;
-            border-radius: 10px;
-        }
-        
-        #projects {
-            background: white;
-            padding: 80px 10%;
-        }
-        
-        #contact {
-            background: #ecf0f1;
-            padding: 80px 10%;
-        }
-        
-        
-        .project-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
-        
-        .project {
-            background: white;
-            padding: 20px;
-            width: 300px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-        }
-        
-        .project:hover {
-            transform: translateY(-5px);
-        }
-        
-        .project h3 {
-            color: #2c3e50;
-        }
-        
-        .project a {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 10px 15px;
-            background: #3498db;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background 0.3s;
-        }
-        
-        .project a:hover {
-            background: #2980b9;
-        }
-        
-        
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #2c3e50;
-            color: white;
-        }
-        
-        
-        @media (max-width: 768px) {
-            .project-container {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Seongjin's Portfolio</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div class="wrap">
+    
     <header>
-        <h1>Seongjin's Portfolio</h1>
+      <div class="container header-container">
+        <h1 class="logo">Seongjin's Portfolio</h1>
         <nav>
-            <ul>
-                <li><a href="#about">소개</a></li>
-                <li><a href="#projects">프로젝트</a></li>
-                <li><a href="#contact">연락하기</a></li>
-            </ul>
+          <ul class="nav-menu">
+            <li><a href="#about">소개</a></li>
+            <li><a href="#projects">프로젝트</a></li>
+            <li><a href="#contact">연락하기</a></li>
+          </ul>
         </nav>
+      </div>
     </header>
 
-    <section id="about">
-        <h2>안녕하세요! 👋</h2>
-        <p>저는 <strong>Computer Science와 Data Science를 공부</strong>하고 있습니다.</p>
-        <p>데이터 분석, 통계, 빅데이터, 딥러닝, 머신러닝에도 관심이 있으며 프로젝트를 진행하고 있습니다.</p>
-    </section>
-
-    <section id="projects">
-        <h2>💡 프로젝트</h2>
-        <div class="project-container">
-            <div class="project">
-                <h3>SLDT (Sign Language Detection Translator)</h3>
-                <p>웹캠을 통해 수어를 감지하고 번역하는 프로젝트</p>
-                <a href="#">자세히 보기</a>
-            </div>
-            <div class="project">
-                <h3>기타 프로젝트</h3>
-                <p>추가할 프로젝트를 여기에 넣을 수 있어요!</p>
-                <a href="#">자세히 보기</a>
-            </div>
+    <!-- 메인 컨텐츠 -->
+    <main>
+      <!-- 소개 섹션 -->
+      <section id="about" class="section about">
+        <div class="container">
+          <h2>안녕하세요! 👋</h2>
+          <p>
+            저는 <strong>Computer Science 와 Data Science</strong>를 공부하고
+            있습니다.
+          </p>
+          <p>
+            데이터분석, 통계, 빅데이터, 딥러닝, 머신러닝에도 관심이 있으며,
+            다양한 프로젝트를 진행하고 있습니다.
+          </p>
         </div>
-    </section>
+      </section>
 
-    <section id="contact">
-        <h2>📬 연락하기</h2>
-        <p>이메일: <a href="mailto:seongjinpark99@gmail.com">seongjinpark99@gmail.com</a></p>
-    </section>
+     
+      <section id="projects" class="section projects">
+        <div class="container">
+          <h2>💡 프로젝트</h2>
+          <div class="project-cards">
+            <div class="card">
+              <h3>SLDT (Sign Language Detection Translator)</h3>
+              <p>웹캠을 통해 수어를 감지하고 번역하는 프로젝트</p>
+              <a href="#" class="btn">자세히 보기</a>
+            </div>
+            <div class="card">
+              <h3>기타 프로젝트</h3>
+              <p>추가할 프로젝트를 여기에 넣을 수 있어요!</p>
+              <a href="#" class="btn">자세히 보기</a>
+            </div>
+          </div>
+        </div>
+      </section>
 
+     
+      <section id="contact" class="section contact">
+        <div class="container">
+          <h2>📬 연락하기</h2>
+          <p>
+            이메일:
+            <a href="mailto:seongjin@example.com">seongjin@example.com</a>
+          </p>
+        </div>
+      </section>
+    </main>
+
+   
     <footer>
+      <div class="container">
         <p>&copy; 2025 Seongjin. All Rights Reserved.</p>
+      </div>
     </footer>
+  </div>
+
+  
+  <button id="btnTop" title="최상단으로 이동">&#8679;</button>
+
+  <script>
+    
+    const btnTop = document.getElementById('btnTop');
+    window.addEventListener('scroll', function () {
+      if (window.pageYOffset > 300) {
+        btnTop.style.display = 'block';
+      } else {
+        btnTop.style.display = 'none';
+      }
+    });
+
+    btnTop.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
 </body>
 </html>
