@@ -1,107 +1,199 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Seongjin's Portfolio</title>
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap"
-    rel="stylesheet"
-  />
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Seongjin's Portfolio </title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
+  <!-- Google Fonts (Montserrat) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <!-- 공통 CSS (reset 등) -->
+  <link rel="stylesheet" media="all" href="css/common.css" />
+  <!-- Portfolio CSS -->
+  <link rel="stylesheet" href="css/portfolio.css">
 </head>
 <body>
-  <div class="wrap">
-    
-    <header>
-      <div class="container header-container">
-        <h1 class="logo">Seongjin's Portfolio</h1>
-        <nav>
-          <ul class="nav-menu">
-            <li><a href="#about">소개</a></li>
-            <li><a href="#projects">프로젝트</a></li>
-            <li><a href="#contact">연락하기</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-
-    <!-- 메인 컨텐츠 -->
-    <main>
-      <!-- 소개 섹션 -->
-      <section id="about" class="section about">
-        <div class="container">
-          <h2>안녕하세요! 👋</h2>
-          <p>
-            저는 <strong>Computer Science 와 Data Science</strong>를 공부하고
-            있습니다.
-          </p>
-          <p>
-            데이터분석, 통계, 빅데이터, 딥러닝, 머신러닝에도 관심이 있으며,
-            다양한 프로젝트를 진행하고 있습니다.
-          </p>
+<div class="wrap">
+  <main>
+    <!-- Skills Section -->
+    <section class="skills">
+      <div class="inner">
+        <h2><span>Skills</span></h2>
+        <div class="skills-container">
+          <div class="skill-category">
+            <h3>Languages &amp; Frameworks</h3>
+            <ul>
+              <li>Python</li>
+              <li>Java</li>
+              <li>C</li>
+              <li>R</li>
+              <li>Kotlin</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h3>Tools &amp; Platforms</h3>
+            <ul>
+              <li>TensorFlow</li>
+              <li>OpenCV</li>
+              <li>Docker</li>
+              <li>Git</li>
+              <li>SAP ERP</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h3>Other Skills</h3>
+            <ul>
+              <li>Data analysis</li>
+              <li>Software refactoring</li>
+              <li>Containerization</li>
+              <li>Distributed systems</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h3>Interests</h3>
+            <ul>
+              <li>Creating audio equipment</li>
+              <li>Designing clothing</li>
+              <li>Composing electronic music</li>
+            </ul>
+          </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-     
-      <section id="projects" class="section projects">
-        <div class="container">
-          <h2>💡 프로젝트</h2>
-          <div class="project-cards">
-            <div class="card">
-              <h3>SLDT (Sign Language Detection Translator)</h3>
-              <p>웹캠을 통해 수어를 감지하고 번역하는 프로젝트</p>
-              <a href="#" class="btn">자세히 보기</a>
+    <!-- Portfolio Section -->
+    <section class="portfolio">
+      <div class="inner">
+        <h2><span>Portfolio</span></h2>
+        <div class="portfolio-grid">
+          <!-- Project 1: Wafer-Defect-Classification-Semi-Supervised-Learning -->
+          <div class="portfolio-card">
+            <div class="card-content">
+              <h3>
+                Wafer-Defect-Classification-Semi-Supervised-Learning 
+                <span class="privacy">(Private)</span>
+              </h3>
+              <p class="summary">
+                This project aims to implement a classification model for wafer map defect detection using semi-supervised learning techniques.
+                <br><br>
+                <em>Updated 3 days ago</em>
+              </p>
+              <div class="card-actions">
+                <!-- 링크 버튼  -->
+              </div>
             </div>
-            <div class="card">
-              <h3>기타 프로젝트</h3>
-              <p>추가할 프로젝트를 여기에 넣을 수 있어요!</p>
-              <a href="#" class="btn">자세히 보기</a>
+          </div>
+          <!-- Project 2: Semiconductor-Defect-Prediction-Using-ML -->
+          <div class="portfolio-card">
+            <div class="card-content">
+              <h3>
+                Semiconductor-Defect-Prediction-Using-ML 
+                <span class="privacy">(Public)</span>
+              </h3>
+              <p class="summary">
+                Defect Prediction in Semiconductor Sensor Data Using Machine Learning and Dimensionality Reduction.
+                <br>
+                <strong>Jupyter Notebook</strong>
+                <br>
+                <em>Updated last week</em>
+              </p>
+              <div class="card-actions">
+                <!-- 링크 버튼  -->
+              </div>
+            </div>
+          </div>
+          <!-- Project 3: Probabilistic Language Identification / 확률적 언어 식별 -->
+          <div class="portfolio-card">
+            <div class="card-content">
+              <h3>
+                Probabilistic Language Identification / 확률적 언어 식별
+              </h3>
+              <p class="summary">
+                <strong>English &amp; 한국어 Version</strong>
+                <br><br>
+                <strong>Introduction / 소개</strong>
+                <br>
+                This project implements a Bayesian probabilistic language identification system that determines whether a given text is written in English or Spanish using Bayesian Inference.
+                <br><br>
+                이 프로젝트는 <strong>베이즈 추론(Bayesian Inference)</strong>을 활용하여 주어진 텍스트가 영어인지 스페인어인지 확률적으로 판별하는 시스템입니다.
+                <br><br>
+                The input consists of a text file along with two prior probability values. The text file contains printable ASCII characters, and the system processes it to compute the frequency of each letter (A-Z) while ignoring case and non-alphabetic characters. The prior probability values indicate the likelihood of the text being in English or Spanish before analyzing its content.
+                <br><br>
+                입력 데이터는 텍스트 파일과 두 개의 사전 확률 값으로 구성됩니다. 텍스트 파일은 ASCII 문자로 이루어져 있으며, 시스템은 이를 처리하여 A-Z까지 각 문자 빈도를 계산하며, 대소문자를 무시하고 비알파벳 문자는 제외합니다.
+                <br><br>
+                <strong>Prior Probability / 사전 확률</strong>
+                <br>
+                The prior probability (P(Y = y)) represents the likelihood of the text belonging to language (y) before analyzing its contents. These probabilities are user-defined inputs.
+                <br>
+                사전 확률 (P(Y = y))은 텍스트가 특정 언어일 가능성을 분석하기 전에 주어지는 값으로, 사용자 입력을 통해 설정됩니다.
+                <br>
+                * (P(Y = English)): The prior probability of the text being English.
+                <br>
+                * (P(Y = Spanish) = 1 - P(Y = English)): The prior probability of the text being Spanish.
+                <br>
+                These values help guide the Bayesian model when making a final decision.
+              </p>
+              <div class="card-actions">
+                <!-- 링크 버튼  -->
+              </div>
+            </div>
+          </div>
+          <!-- Project 4: UW Path Finder -->
+          <div class="portfolio-card">
+            <div class="card-content">
+              <h3>
+                UW Path Finder
+              </h3>
+              <p class="summary">
+                UW Path Finder is a Java-based application that finds the shortest walking path between buildings on the University of Wisconsin-Madison campus.
+                <br><br>
+                It utilizes Dijkstra's Algorithm to compute the optimal route using data from a DOT file.
+                <br><br>
+                UW Path Finder는 위스콘신 대학교 매디슨 캠퍼스 내 건물 간 최단 경로를 찾는 Java 기반 애플리케이션입니다.
+                <br>
+                <strong>다익스트라 알고리즘(Dijkstra’s Algorithm)</strong>을 사용하여 DOT 파일에서 제공되는 데이터로 최적의 경로를 계산합니다.
+              </p>
+              <div class="card-actions">
+                <!-- 링크 버튼 -->
+              </div>
             </div>
           </div>
         </div>
-      </section>
-
-     
-      <section id="contact" class="section contact">
-        <div class="container">
-          <h2>📬 연락하기</h2>
-          <p>
-            이메일:
-            <a href="mailto:seongjin@example.com">seongjin@example.com</a>
-          </p>
-        </div>
-      </section>
-    </main>
-
-   
-    <footer>
-      <div class="container">
-        <p>&copy; 2025 Seongjin. All Rights Reserved.</p>
       </div>
-    </footer>
-  </div>
+    </section>
 
-  
-  <button id="btnTop" title="최상단으로 이동">&#8679;</button>
+    <button type="button" class="btn_top"><span class="hidden_text">최상단으로 가기</span></button>
+  </main>
+  <!-- Footer -->
+  <footer>
+    <h2>Contacts</h2>
+    <ul class="contact_list">
+      <li>
+        <a href="mailto:seongjinpark99@gmail.com"><i class="far fa-envelope"></i> seongjinpark99@gmail.com</a>
+      </li>
+      <li><i class="fas fa-phone"></i> 010 2773 5982</li>
+      <li><a href="https://github.com/suyeon0103"><i class="fab fa-github"></i> GitHub account</a></li>
+    </ul>
+  </footer>
+</div>
+<script>
+  const html = document.documentElement;
+  const btnTop = document.querySelector('.btn_top');
 
-  <script>
-    
-    const btnTop = document.getElementById('btnTop');
-    window.addEventListener('scroll', function () {
-      if (window.pageYOffset > 300) {
-        btnTop.style.display = 'block';
-      } else {
-        btnTop.style.display = 'none';
-      }
-    });
+  window.addEventListener('scroll', () => {
+    if (html.scrollTop > 200) {
+      btnTop.style.visibility = 'visible';
+    } else {
+      btnTop.style.visibility = 'hidden';
+    }
+  });
 
-    btnTop.addEventListener('click', function () {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  </script>
+  btnTop.addEventListener('click', () => {
+    window.scroll({ behavior: 'smooth', top: 0 });
+  });
+</script>
 </body>
 </html>
