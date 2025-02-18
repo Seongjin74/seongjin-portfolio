@@ -14,7 +14,6 @@
 </head>
 <body>
   <div class="wrap">
-
     <header>
       <div class="container header-container">
         <h1 class="logo">Seongjin's Portfolio</h1>
@@ -26,10 +25,8 @@
           </ul>
         </nav>
      
-        <!-- 다크모드 토글 버튼 -->
         <button id="darkModeToggle" title="다크모드 전환">🌙</button>
-        <!-- 단일 언어 토글 버튼 -->
-        <button id="langToggle" class="lang-btn" title="언어 전환">KOR</button>
+        <button id="langToggle" class="lang-btn" title="언어 전환">ENG</button>
       </div>
     </header>
 
@@ -192,6 +189,7 @@
       }
     };
 
+    // 언어 적용 함수 (단일 버튼으로 토글)
     function setLanguage(lang) {
       const t = translations[lang];
       document.getElementById('navAbout').textContent = t.navAbout;
@@ -209,7 +207,11 @@
       document.querySelectorAll('.btn.read-more').forEach(btn => btn.textContent = t.readMore);
       document.querySelectorAll('.btn.code').forEach(btn => btn.textContent = t.code);
       
-      document.getElementById('langToggle').textContent = lang.toUpperCase();
+      if (lang === 'kor') {
+        document.getElementById('langToggle').textContent = "ENG";
+      } else {
+        document.getElementById('langToggle').textContent = "KOR";
+      }
       localStorage.setItem('lang', lang);
     }
 
