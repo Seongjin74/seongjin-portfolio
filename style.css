@@ -100,6 +100,21 @@ header {
   color: #fff;
 }
 
+.lang-btn {
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 5px 10px;
+  margin-left: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.lang-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
 .section {
   padding: 60px 0;
   text-align: center;
@@ -109,6 +124,11 @@ header {
   font-size: 2rem;
   margin-bottom: 20px;
   color: var(--header-bg);
+}
+
+body.dark-mode .section h2,
+body.dark-mode .card h3 {
+  color: #fff;
 }
 
 .section p {
@@ -155,6 +175,7 @@ header {
   margin-top: 15px;
 }
 
+/* 버튼 */
 .btn {
   display: inline-block;
   padding: 10px 20px;
