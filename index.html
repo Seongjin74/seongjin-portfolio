@@ -21,13 +21,17 @@
         <h1 class="logo">Seongjin's Portfolio</h1>
         <nav>
           <ul class="nav-menu">
-            <li><a href="#about">소개</a></li>
-            <li><a href="#projects">프로젝트</a></li>
-            <li><a href="#contact">연락하기</a></li>
+            <li><a href="#about" id="navAbout">소개</a></li>
+            <li><a href="#projects" id="navProjects">프로젝트</a></li>
+            <li><a href="#contact" id="navContact">연락하기</a></li>
           </ul>
         </nav>
      
+        <!-- 다크모드 토글 버튼 -->
         <button id="darkModeToggle" title="다크모드 전환">🌙</button>
+        <!-- 언어 토글 버튼 -->
+        <button id="langKOR" class="lang-btn" title="한국어">KOR</button>
+        <button id="langENG" class="lang-btn" title="영어">ENG</button>
       </div>
     </header>
 
@@ -36,7 +40,7 @@
     
       <section id="about" class="section about">
         <div class="container">
-          <h2>안녕하세요! 👋</h2>
+          <h2 id="aboutGreeting">안녕하세요! 👋</h2>
           <p>
             저는 <strong>Computer Science 와 Data Science</strong>를 공부하고 있습니다.
           </p>
@@ -49,56 +53,65 @@
      
       <section id="projects" class="section projects">
         <div class="container">
-          <h2>💡 프로젝트</h2>
+          <h2 id="projectsTitle">💡 프로젝트</h2>
           <div class="project-cards">
             <!-- Project 1 -->
             <div class="card">
               <h3>Semiconductor-Defect-Prediction-Using-ML</h3>
-              <p>반도체 센서 데이터를 활용한 결함 예측: 머신러닝과 차원 축소 기법을 이용한 접근</p>
+              <p id="proj1Desc">
+                반도체 센서 데이터를 활용한 결함 예측: 머신러닝과 차원 축소 기법을 이용한 접근
+              </p>
               <div class="card-buttons">
-                <a href="project1.html" class="btn">자세히 보기</a>
-                <a href="https://github.com/Seongjin74/Semiconductor-Defect-Prediction-Using-ML" class="btn" target="_blank">코드</a>
+                <a href="project1.html" class="btn read-more">자세히 보기</a>
+                <a href="https://github.com/Seongjin74/Semiconductor-Defect-Prediction-Using-ML" class="btn code" target="_blank">코드</a>
               </div>
             </div>
 
             <!-- Project 2 -->
             <div class="card">
               <h3>SLDT (Sign Language Detection Translator)</h3>
-              <p>웹캠을 통해 수어를 감지하고 번역하는 프로젝트</p>
+              <p id="proj2Desc">
+                웹캠을 통해 수어를 감지하고 번역하는 프로젝트
+              </p>
               <div class="card-buttons">
-                <a href="project2.html" class="btn">자세히 보기</a>
-                <!-- GitHub 링크가 없는 경우, 버튼에 disabled 클래스를 추가 -->
-                <a href="#" class="btn disabled">코드</a>
+                <a href="project2.html" class="btn read-more">자세히 보기</a>
+                <a href="#" class="btn code disabled">코드</a>
               </div>
             </div>
 
             <!-- Project 3 -->
             <div class="card">
               <h3>Wafer-Defect-Classification</h3>
-              <p>증강 데이터 생성과 반지도학습 기법을 결합해 다양한 웨이퍼 결함 유형을 효과적으로 분류하는 딥러닝 모델 구축</p>
+              <p id="proj3Desc">
+                증강 데이터 생성과 반지도학습 기법을 결합해 다양한 웨이퍼 결함 유형을 효과적으로 분류하는 딥러닝 모델 구축
+              </p>
               <div class="card-buttons">
-                <a href="project3.html" class="btn">자세히 보기</a>
-                <a href="https://github.com/Seongjin74/Wafer-Defect-Classification" class="btn" target="_blank">코드</a>
+                <a href="project3.html" class="btn read-more">자세히 보기</a>
+                <a href="https://github.com/Seongjin74/Wafer-Defect-Classification" class="btn code" target="_blank">코드</a>
               </div>
             </div>
 
             <!-- Project 4 -->
             <div class="card">
               <h3>Probabilistic-Language-Identification</h3>
-              <p>베이즈 추론(Bayesian Inference)을 활용하여 주어진 텍스트가 영어인지 스페인어인지 확률적으로 판별하는 시스템</p>
+              <p id="proj4Desc">
+                베이즈 추론(Bayesian Inference)을 활용하여 주어진 텍스트가 영어인지 스페인어인지 확률적으로 판별하는 시스템
+              </p>
               <div class="card-buttons">
-                <a href="project4.html" class="btn">자세히 보기</a>
-                <a href="https://github.com/Seongjin74/Probabilistic-Language-Identification" class="btn" target="_blank">코드</a>
+                <a href="project4.html" class="btn read-more">자세히 보기</a>
+                <a href="https://github.com/Seongjin74/Probabilistic-Language-Identification" class="btn code" target="_blank">코드</a>
               </div>
             </div>
 
             <!-- Project 5 -->
             <div class="card">
               <h3>UW-Path-Finder</h3>
-              <p>위스콘신 대학교 매디슨 캠퍼스 내 건물 간 최단 경로를 다익스트라 알고리즘(Dijkstra’s Algorithm)를 사용해 찾는 Java 기반 애플리케이션</p>
+              <p id="proj5Desc">
+                위스콘신 대학교 매디슨 캠퍼스 내 건물 간 최단 경로를 다익스트라 알고리즘(Dijkstra’s Algorithm)를 사용해 찾는 Java 기반 애플리케이션
+              </p>
               <div class="card-buttons">
-                <a href="project5.html" class="btn">자세히 보기</a>
-                <a href="https://github.com/Seongjin74/UW-Path-Finder" class="btn" target="_blank">코드</a>
+                <a href="project5.html" class="btn read-more">자세히 보기</a>
+                <a href="https://github.com/Seongjin74/UW-Path-Finder" class="btn code" target="_blank">코드</a>
               </div>
             </div>
           </div>
@@ -107,7 +120,7 @@
 
       <section id="contact" class="section contact">
         <div class="container">
-          <h2>📬 연락하기</h2>
+          <h2 id="contactTitle">📬 연락하기</h2>
           <p>
             이메일:
             <a href="mailto:seongjinpark99@gmail.com">seongjinpark99@gmail.com</a>
@@ -156,6 +169,65 @@
     btnTop.addEventListener('click', function () {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
+
+    const translations = {
+      kor: {
+        navAbout: "소개",
+        navProjects: "프로젝트",
+        navContact: "연락하기",
+        aboutGreeting: "안녕하세요! 👋",
+        projectsTitle: "💡 프로젝트",
+        proj1Desc: "반도체 센서 데이터를 활용한 결함 예측: 머신러닝과 차원 축소 기법을 이용한 접근",
+        proj2Desc: "웹캠을 통해 수어를 감지하고 번역하는 프로젝트",
+        proj3Desc: "증강 데이터 생성과 반지도학습 기법을 결합해 다양한 웨이퍼 결함 유형을 효과적으로 분류하는 딥러닝 모델 구축",
+        proj4Desc: "베이즈 추론(Bayesian Inference)을 활용하여 주어진 텍스트가 영어인지 스페인어인지 확률적으로 판별하는 시스템",
+        proj5Desc: "위스콘신 대학교 매디슨 캠퍼스 내 건물 간 최단 경로를 다익스트라 알고리즘(Dijkstra’s Algorithm)를 사용해 찾는 Java 기반 애플리케이션",
+        contactTitle: "📬 연락하기",
+        readMore: "자세히 보기",
+        code: "코드"
+      },
+      eng: {
+        navAbout: "About",
+        navProjects: "Projects",
+        navContact: "Contact",
+        aboutGreeting: "Hello! 👋",
+        projectsTitle: "💡 Projects",
+        proj1Desc: "Defect prediction using semiconductor sensor data: an approach using machine learning and dimensionality reduction techniques",
+        proj2Desc: "A project that detects and translates sign language via webcam",
+        proj3Desc: "Building a deep learning model that effectively classifies various wafer defect types by combining augmented data generation and semi-supervised learning techniques",
+        proj4Desc: "A system that probabilistically determines whether a given text is in English or Spanish using Bayesian Inference",
+        proj5Desc: "A Java-based application that finds the shortest path between buildings on the University of Wisconsin-Madison campus using Dijkstra's Algorithm",
+        contactTitle: "📬 Contact",
+        readMore: "Read More",
+        code: "Code"
+      }
+    };
+
+    function setLanguage(lang) {
+      const t = translations[lang];
+      document.getElementById('navAbout').textContent = t.navAbout;
+      document.getElementById('navProjects').textContent = t.navProjects;
+      document.getElementById('navContact').textContent = t.navContact;
+      document.getElementById('aboutGreeting').textContent = t.aboutGreeting;
+      document.getElementById('projectsTitle').textContent = t.projectsTitle;
+      document.getElementById('proj1Desc').textContent = t.proj1Desc;
+      document.getElementById('proj2Desc').textContent = t.proj2Desc;
+      document.getElementById('proj3Desc').textContent = t.proj3Desc;
+      document.getElementById('proj4Desc').textContent = t.proj4Desc;
+      document.getElementById('proj5Desc').textContent = t.proj5Desc;
+      document.getElementById('contactTitle').textContent = t.contactTitle;
+      
+      document.querySelectorAll('.btn.read-more').forEach(btn => btn.textContent = t.readMore);
+      document.querySelectorAll('.btn.code').forEach(btn => btn.textContent = t.code);
+
+      localStorage.setItem('lang', lang);
+    }
+
+    document.getElementById('langKOR').addEventListener('click', () => setLanguage('kor'));
+    document.getElementById('langENG').addEventListener('click', () => setLanguage('eng'));
+
+    const savedLang = localStorage.getItem('lang') || 'kor';
+    setLanguage(savedLang);
   </script>
 </body>
 </html>
