@@ -27,11 +27,8 @@
           </ul>
         </nav>
      
-        <!-- 다크모드 토글 버튼 -->
         <button id="darkModeToggle" title="다크모드 전환">🌙</button>
-        <!-- 언어 토글 버튼 -->
-        <button id="langKOR" class="lang-btn" title="한국어">KOR</button>
-        <button id="langENG" class="lang-btn" title="영어">ENG</button>
+        <button id="langToggle" class="lang-btn" title="언어 전환">KOR</button>
       </div>
     </header>
 
@@ -145,7 +142,6 @@
       document.body.classList.add('dark-mode');
       toggleButton.textContent = '☀️';
     }
-
     toggleButton.addEventListener('click', function () {
       document.body.classList.toggle('dark-mode');
       if (document.body.classList.contains('dark-mode')) {
@@ -159,13 +155,8 @@
 
     const btnTop = document.getElementById('btnTop');
     window.addEventListener('scroll', function () {
-      if (window.pageYOffset > 300) {
-        btnTop.style.display = 'block';
-      } else {
-        btnTop.style.display = 'none';
-      }
+      btnTop.style.display = window.pageYOffset > 300 ? 'block' : 'none';
     });
-
     btnTop.addEventListener('click', function () {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
@@ -175,7 +166,7 @@
         navAbout: "소개",
         navProjects: "프로젝트",
         navContact: "연락하기",
-        aboutGreeting: "안녕하세요! 👋",
+        aboutGreeting: "안녕하세요!",
         projectsTitle: "💡 프로젝트",
         proj1Desc: "반도체 센서 데이터를 활용한 결함 예측: 머신러닝과 차원 축소 기법을 이용한 접근",
         proj2Desc: "웹캠을 통해 수어를 감지하고 번역하는 프로젝트",
@@ -219,12 +210,21 @@
       
       document.querySelectorAll('.btn.read-more').forEach(btn => btn.textContent = t.readMore);
       document.querySelectorAll('.btn.code').forEach(btn => btn.textContent = t.code);
-
+      
+      document.getElementById('langToggle').textContent = lang.toUpperCase();
+      
       localStorage.setItem('lang', lang);
     }
 
-    document.getElementById('langKOR').addEventListener('click', () => setLanguage('kor'));
-    document.getElementById('langENG').addEventListener('click', () => setLanguage('eng'));
+    const langToggleBtn = document.getElementById('langToggle');
+    langToggleBtn.addEventListener('click', function () {
+      const currentLang = localStorage.getItem('lang') || 'kor';
+      if (currentLang === 'kor') {
+        setLanguage('eng');
+      } else {
+        setLanguage('kor');
+      }
+    });
 
     const savedLang = localStorage.getItem('lang') || 'kor';
     setLanguage(savedLang);
