@@ -10,10 +10,10 @@
     href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap"
     rel="stylesheet"
   />
-  <!-- style.css 파일 참조 -->
+  <!-- 기존 style.css 참조 -->
   <link rel="stylesheet" href="style.css" />
   <style>
-    /* 추가 수정 스타일 (이미지 크기, 유튜브 영상 크기 등) */
+    /* 추가 스타일: 이미지 및 영상 크기 조정, 텍스트 좌측 정렬 등 */
     .diagram-img {
       max-width: 80%;
       display: block;
@@ -25,13 +25,12 @@
       height: 337px;
       margin-bottom: 2rem;
     }
-    /* 프로젝트 소개 내 문단은 좌측 정렬 */
+    /* 본문 내용은 좌측 정렬 */
     .section.about p,
     .section.about ul {
       text-align: left;
       margin-bottom: 1rem;
     }
-    /* bullet list 제거를 위해 ul를 block 형태로 표시(필요시 제거) */
     .section.about ul {
       list-style: none;
       padding-left: 0;
@@ -61,29 +60,31 @@
     <!-- 프로젝트 소개 섹션 -->
     <section id="about" class="section about">
       <div class="container">
-        <h1>프로젝트: SLDVT – 수화 감지 음성 번역기</h1>
-        <p>
-          본 프로젝트는 깊이 있는 학습 기법 중 하나인 LSTM(Long Short-Term Memory) 신경망을 활용하여, 수화 제스처를 실시간 음성으로 변환하는 시스템을 개발하는 것을 목표로 합니다. 이를 통해 청각 장애인과 비장애인 사이의 소통 격차를 줄이고, 모두가 보다 원활하게 소통할 수 있도록 돕고자 합니다.
-        </p>
-        <p>
-          시스템은 카메라나 센서를 통해 사용자의 수화 제스처를 실시간으로 캡처합니다. 캡처된 영상은 LSTM 기반의 행동 인식 모델을 통해 분석되며, 이 모델은 다양한 정적 및 동적 제스처를 학습하여 인식할 수 있도록 설계되었습니다. LSTM 네트워크는 시퀀스 데이터의 시간적 의존성을 효과적으로 모델링하여 수화의 동적인 특성을 잘 반영합니다.
-        </p>
-        <p>
-          인식된 제스처는 텍스트 정보로 변환된 후, 텍스트-투-스피치(TTS) 기술을 이용해 음성으로 합성됩니다. 합성된 음성은 스피커나 헤드폰을 통해 출력되어, 수화를 모르는 사람들과도 원활한 소통이 가능하도록 합니다.
-        </p>
-        <p>
-          실시간 수화 인식: 지연 없이 즉각적으로 제스처를 인식하여 소통이 원활합니다. 다중 제스처 인식: 정적 제스처와 동적 제스처 모두를 인식할 수 있도록 학습되었습니다. 정확성과 견고성: 다양한 환경과 조명 조건에서도 높은 정확도를 유지할 수 있도록 다양한 데이터셋을 활용해 학습하였습니다. 접근성: 수화 숙련도에 상관없이 누구나 쉽게 사용할 수 있도록 설계되었습니다.
-        </p>
-        <p>
-          이러한 시스템은 청각 장애인 및 난청인들이 사회적, 직업적 환경에서 신뢰할 수 있는 소통 수단을 제공받도록 지원하며, 깊이 있는 학습 기법과 LSTM 네트워크의 역량을 통해 소통의 장벽을 허무는 것을 목표로 합니다.
-        </p>
+        <h1 id="aboutTitle">프로젝트: SLDVT – 수화 감지 음성 번역기</h1>
+        <div id="aboutContent">
+          <p>
+            본 프로젝트는 깊이 있는 학습 기법 중 하나인 LSTM(Long Short-Term Memory) 신경망을 활용하여, 수화 제스처를 실시간 음성으로 변환하는 시스템을 개발하는 것을 목표로 합니다. 이를 통해 청각 장애인과 비장애인 사이의 소통 격차를 줄이고, 모두가 보다 원활하게 소통할 수 있도록 돕고자 합니다.
+          </p>
+          <p>
+            시스템은 카메라나 센서를 통해 사용자의 수화 제스처를 실시간으로 캡처합니다. 캡처된 영상은 LSTM 기반의 행동 인식 모델을 통해 분석되며, 이 모델은 다양한 정적 및 동적 제스처를 학습하여 인식할 수 있도록 설계되었습니다. LSTM 네트워크는 시퀀스 데이터의 시간적 의존성을 효과적으로 모델링하여 수화의 동적인 특성을 잘 반영합니다.
+          </p>
+          <p>
+            인식된 제스처는 텍스트 정보로 변환된 후, 텍스트-투-스피치(TTS) 기술을 이용해 음성으로 합성됩니다. 합성된 음성은 스피커나 헤드폰을 통해 출력되어, 수화를 모르는 사람들과도 원활한 소통이 가능하도록 합니다.
+          </p>
+          <p>
+            실시간 수화 인식: 지연 없이 즉각적으로 제스처를 인식하여 소통이 원활합니다. 다중 제스처 인식: 정적 제스처와 동적 제스처 모두를 인식할 수 있도록 학습되었습니다. 정확성과 견고성: 다양한 환경과 조명 조건에서도 높은 정확도를 유지할 수 있도록 다양한 데이터셋을 활용해 학습하였습니다. 접근성: 수화 숙련도에 상관없이 누구나 쉽게 사용할 수 있도록 설계되었습니다.
+          </p>
+          <p>
+            이러한 시스템은 청각 장애인 및 난청인들이 사회적, 직업적 환경에서 신뢰할 수 있는 소통 수단을 제공받도록 지원하며, 깊이 있는 학습 기법과 LSTM 네트워크의 역량을 통해 소통의 장벽을 허무는 것을 목표로 합니다.
+          </p>
+        </div>
       </div>
     </section>
 
-    <!--  유튜브 데모 영상  -->
+    <!-- 데모 영상 섹션 (아키텍처 및 워크플로우 위에 배치) -->
     <section id="demo" class="section">
       <div class="container" style="text-align: center;">
-        <h2>데모 영상</h2>
+        <h2 id="demoTitle">데모 영상</h2>
         <iframe class="video-embed" src="https://www.youtube.com/embed/rw1ZkWsNUjY" title="데모 영상" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
     </section>
@@ -91,72 +92,74 @@
     <!-- 아키텍처 및 워크플로우 섹션 -->
     <section id="content" class="section">
       <div class="container">
-        <h2>아키텍처 및 워크플로우</h2>
-        <h3>High Level Diagram</h3>
-        <p>상위 수준의 시스템 구조를 나타낸 다이어그램입니다.</p>
-        <img src="HLD.png" alt="High Level Diagram" class="diagram-img" />
-        <h3>Workflow</h3>
-        <p>시스템의 동작 과정 및 데이터 흐름을 시각적으로 설명한 워크플로우입니다.</p>
-        <img src="Workflow.jpeg" alt="Workflow Diagram" class="diagram-img" />
+        <h2 id="contentTitle">아키텍처 및 워크플로우</h2>
+        <div id="contentContent">
+          <h3>High Level Diagram</h3>
+          <p>상위 수준의 시스템 구조를 나타낸 다이어그램입니다.</p>
+          <img src="HLD.png" alt="High Level Diagram" class="diagram-img" />
+          <h3>Workflow</h3>
+          <p>시스템의 동작 과정 및 데이터 흐름을 시각적으로 설명한 워크플로우입니다.</p>
+          <img src="Workflow.jpeg" alt="Workflow Diagram" class="diagram-img" />
+        </div>
       </div>
     </section>
 
     <!-- 시스템 세부 설명 섹션 -->
     <section id="system-details" class="section">
       <div class="container">
-        <h2>시스템 세부 설명</h2>
-        <h3>LSTM 모델 개요</h3>
-        <p>
-          LSTM은 인공 신경망의 한 종류로, 시퀀스 데이터를 입력받아 원하는 출력을 생성하는 모델입니다. 기존의 순환 신경망(RNN)은 장기 의존성 문제를 가지고 있었으나, LSTM은 셀 상태(cell state)라는 구조를 도입해 이 문제를 효과적으로 해결하였습니다. 셀 상태는 네트워크의 여러 시점에 걸쳐 정보를 유지하고 전달하여, 장기간의 데이터를 기억할 수 있도록 합니다.
-        </p>
-        <h3>데이터 수집 및 전처리</h3>
-        <p>
-          <strong>데이터 수집:</strong> OpenCV API를 이용해 카메라로 30프레임의 데이터를 수집합니다.
-        </p>
-        <p>
-          <strong>데이터 전처리:</strong> MediaPipe를 활용하여 얼굴, 왼손, 오른손, 그리고 몸의 좌표값(총 1662개)을 추출하고, 이를 NumPy 배열로 전처리합니다.
-        </p>
-        <p>
-          <strong>학습:</strong> 전처리된 데이터를 바탕으로 LSTM 모델을 200 epochs 동안 훈련하며, 전체 훈련 과정을 30회 반복합니다.
-        </p>
+        <h2 id="systemDetailsTitle">시스템 세부 설명</h2>
+        <div id="systemDetailsContent">
+          <h3>LSTM 모델 개요</h3>
+          <p>
+            LSTM은 인공 신경망의 한 종류로, 시퀀스 데이터를 입력받아 원하는 출력을 생성하는 모델입니다. 기존의 순환 신경망(RNN)은 장기 의존성 문제를 가지고 있었으나, LSTM은 셀 상태(cell state)라는 구조를 도입해 이 문제를 효과적으로 해결하였습니다. 셀 상태는 네트워크의 여러 시점에 걸쳐 정보를 유지하고 전달하여, 장기간의 데이터를 기억할 수 있도록 합니다.
+          </p>
+          <h3>데이터 수집 및 전처리</h3>
+          <p><strong>데이터 수집:</strong> OpenCV API를 이용해 카메라로 30프레임의 데이터를 수집합니다.</p>
+          <p><strong>데이터 전처리:</strong> MediaPipe를 활용하여 얼굴, 왼손, 오른손, 그리고 몸의 좌표값(총 1662개)을 추출하고, 이를 NumPy 배열로 전처리합니다.</p>
+          <p><strong>학습:</strong> 전처리된 데이터를 바탕으로 LSTM 모델을 200 epochs 동안 훈련하며, 전체 훈련 과정을 30회 반복합니다.</p>
+        </div>
       </div>
     </section>
 
     <!-- 사용자 모드와 학습 모드 섹션 -->
     <section id="modes" class="section">
       <div class="container">
-        <h2>사용자 모드와 학습 모드</h2>
-        <h3>Learning 모드</h3>
-        <ol>
-          <li><strong>입력:</strong> 사용자가 학습할 단어를 입력합니다.</li>
-          <li><strong>데이터 저장:</strong> 입력된 단어에 해당하는 폴더를 생성해 학습 데이터를 저장합니다.</li>
-          <li><strong>캡처 및 전처리:</strong> OpenCV와 MediaPipe를 이용해 30프레임의 수화 데이터를 캡처하고, 전처리 후 저장합니다.</li>
-          <li><strong>학습:</strong> 데이터를 8:2의 비율로 훈련과 검증 데이터로 분할하여 LSTM 모델을 학습시킵니다.</li>
-          <li><strong>모델 저장:</strong> 학습된 모델은 <code>action.keras</code> 파일에 저장됩니다.</li>
-        </ol>
-        <h3>Motion Capture(사용자) 모드</h3>
-        <ol>
-          <li><strong>실시간 캡처:</strong> OpenCV를 통해 사용자의 수화 동작을 실시간으로 캡처합니다.</li>
-          <li><strong>랜드마크 추출:</strong> MediaPipe로 손, 얼굴, 포즈 등의 랜드마크를 추출하고, 신뢰도가 높은 데이터만 선별합니다.</li>
-          <li><strong>데이터 누적:</strong> 일정한 시퀀스 길이(예: 30프레임)로 데이터를 누적합니다.</li>
-          <li><strong>예측:</strong> 학습된 LSTM 모델에 누적된 데이터를 입력하여 예측을 수행합니다. 예측 결과 중 가장 높은 확률의 단어를 선택합니다.</li>
-          <li><strong>출력 조건:</strong> 최근 10개의 예측 결과가 모두 동일하며, 해당 예측의 확률이 95%를 초과하고 이전 예측 단어와 다를 경우에만 최종 단어가 음성으로 출력됩니다.</li>
-          <li><strong>음성 변환:</strong> Google Text-to-Speech API를 사용해 예측 단어를 음성으로 변환하고, 스피커를 통해 재생합니다.</li>
-          <li><strong>종료:</strong> 사용자가 종료 명령을 내리면 시스템이 종료됩니다.</li>
-        </ol>
+        <h2 id="modesTitle">사용자 모드와 학습 모드</h2>
+        <div id="modesContent">
+          <h3>Learning 모드</h3>
+          <ol>
+            <li><strong>입력:</strong> 사용자가 학습할 단어를 입력합니다.</li>
+            <li><strong>데이터 저장:</strong> 입력된 단어에 해당하는 폴더를 생성해 학습 데이터를 저장합니다.</li>
+            <li><strong>캡처 및 전처리:</strong> OpenCV와 MediaPipe를 이용해 30프레임의 수화 데이터를 캡처하고, 전처리 후 저장합니다.</li>
+            <li><strong>학습:</strong> 데이터를 8:2의 비율로 훈련과 검증 데이터로 분할하여 LSTM 모델을 학습시킵니다.</li>
+            <li><strong>모델 저장:</strong> 학습된 모델은 <code>action.keras</code> 파일에 저장됩니다.</li>
+          </ol>
+          <h3>Motion Capture(사용자) 모드</h3>
+          <ol>
+            <li><strong>실시간 캡처:</strong> OpenCV를 통해 사용자의 수화 동작을 실시간으로 캡처합니다.</li>
+            <li><strong>랜드마크 추출:</strong> MediaPipe로 손, 얼굴, 포즈 등의 랜드마크를 추출하고, 신뢰도가 높은 데이터만 선별합니다.</li>
+            <li><strong>데이터 누적:</strong> 일정한 시퀀스 길이(예: 30프레임)로 데이터를 누적합니다.</li>
+            <li><strong>예측:</strong> 학습된 LSTM 모델에 누적된 데이터를 입력하여 예측을 수행합니다. 예측 결과 중 가장 높은 확률의 단어를 선택합니다.</li>
+            <li><strong>출력 조건:</strong> 최근 10개의 예측 결과가 모두 동일하며, 해당 예측의 확률이 95%를 초과하고 이전 예측 단어와 다를 경우에만 최종 단어가 음성으로 출력됩니다.</li>
+            <li><strong>음성 변환:</strong> Google Text-to-Speech API를 사용해 예측 단어를 음성으로 변환하고, 스피커를 통해 재생합니다.</li>
+            <li><strong>종료:</strong> 사용자가 종료 명령을 내리면 시스템이 종료됩니다.</li>
+          </ol>
+        </div>
       </div>
     </section>
 
     <!-- LSTM 선택 이유 섹션 -->
     <section id="lstm-reason" class="section">
       <div class="container">
-        <h2>LSTM 선택 이유 및 고려사항</h2>
-        <p>
-          LSTM은 자연어 처리, 음성 인식, 제스처 인식 등 다양한 분야에서 우수한 성능을 보여온 모델입니다. 그 장점으로는 시퀀스 데이터 처리 능력과 장기 의존성 문제 해결 능력이 있으나, 단점으로는 모델 복잡도가 높아 학습 시간과 연산 자원이 많이 소요될 수 있다는 점이 있습니다.
-        </p>
-        <p>
-          현재 다른 모델(예: Transformer, 합성곱 신경망, 양방향 LSTM)도 고려 중이나, 우선 기본 데모 단계에서는 LSTM을 사용해 mac 환경에서 dmg 파일로 배포하는 수준에 도달했습니다. 다만, 정확도 향상을 위해 프레임 수, 예측 임계값 등의 최적화 작업이 추가로 필요하며, TensorFlow Keras 대신 PyTorch를 사용할 경우 동적 계산 그래프의 장점을 활용할 수 있을 것으로 예상됩니다.
-        </p>
+        <h2 id="lstmReasonTitle">LSTM 선택 이유 및 고려사항</h2>
+        <div id="lstmReasonContent">
+          <p>
+            LSTM은 자연어 처리, 음성 인식, 제스처 인식 등 다양한 분야에서 우수한 성능을 보여온 모델입니다. 그 장점으로는 시퀀스 데이터 처리 능력과 장기 의존성 문제 해결 능력이 있으나, 단점으로는 모델 복잡도가 높아 학습 시간과 연산 자원이 많이 소요될 수 있다는 점이 있습니다.
+          </p>
+          <p>
+            현재 다른 모델(예: Transformer, 합성곱 신경망, 양방향 LSTM)도 고려 중이나, 우선 기본 데모 단계에서는 LSTM을 사용해 mac 환경에서 dmg 파일로 배포하는 수준에 도달했습니다. 다만, 정확도 향상을 위해 프레임 수, 예측 임계값 등의 최적화 작업이 추가로 필요하며, TensorFlow Keras 대신 PyTorch를 사용할 경우 동적 계산 그래프의 장점을 활용할 수 있을 것으로 예상됩니다.
+          </p>
+        </div>
       </div>
     </section>
   </main>
@@ -197,15 +200,121 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
-    // 언어 전환 
+    // 언어 전환을 위한 번역 텍스트
     const translations = {
       kor: {
         navAbout: "소개",
-        navContent: "프로젝트 상세"
+        navContent: "프로젝트 상세",
+        aboutTitle: "프로젝트: SLDVT – 수화 감지 음성 번역기",
+        aboutContent: `<p>
+          본 프로젝트는 깊이 있는 학습 기법 중 하나인 LSTM(Long Short-Term Memory) 신경망을 활용하여, 수화 제스처를 실시간 음성으로 변환하는 시스템을 개발하는 것을 목표로 합니다. 이를 통해 청각 장애인과 비장애인 사이의 소통 격차를 줄이고, 모두가 보다 원활하게 소통할 수 있도록 돕고자 합니다.
+        </p>
+        <p>
+          시스템은 카메라나 센서를 통해 사용자의 수화 제스처를 실시간으로 캡처합니다. 캡처된 영상은 LSTM 기반의 행동 인식 모델을 통해 분석되며, 이 모델은 다양한 정적 및 동적 제스처를 학습하여 인식할 수 있도록 설계되었습니다. LSTM 네트워크는 시퀀스 데이터의 시간적 의존성을 효과적으로 모델링하여 수화의 동적인 특성을 잘 반영합니다.
+        </p>
+        <p>
+          인식된 제스처는 텍스트 정보로 변환된 후, 텍스트-투-스피치(TTS) 기술을 이용해 음성으로 합성됩니다. 합성된 음성은 스피커나 헤드폰을 통해 출력되어, 수화를 모르는 사람들과도 원활한 소통이 가능하도록 합니다.
+        </p>
+        <p>
+          실시간 수화 인식: 지연 없이 즉각적으로 제스처를 인식하여 소통이 원활합니다. 다중 제스처 인식: 정적 제스처와 동적 제스처 모두를 인식할 수 있도록 학습되었습니다. 정확성과 견고성: 다양한 환경과 조명 조건에서도 높은 정확도를 유지할 수 있도록 다양한 데이터셋을 활용해 학습하였습니다. 접근성: 수화 숙련도에 상관없이 누구나 쉽게 사용할 수 있도록 설계되었습니다.
+        </p>
+        <p>
+          이러한 시스템은 청각 장애인 및 난청인들이 사회적, 직업적 환경에서 신뢰할 수 있는 소통 수단을 제공받도록 지원하며, 깊이 있는 학습 기법과 LSTM 네트워크의 역량을 통해 소통의 장벽을 허무는 것을 목표로 합니다.
+        </p>`,
+        demoTitle: "데모 영상",
+        contentTitle: "아키텍처 및 워크플로우",
+        contentContent: `<h3>High Level Diagram</h3>
+        <p>상위 수준의 시스템 구조를 나타낸 다이어그램입니다.</p>
+        <img src="HLD.png" alt="High Level Diagram" class="diagram-img" />
+        <h3>Workflow</h3>
+        <p>시스템의 동작 과정 및 데이터 흐름을 시각적으로 설명한 워크플로우입니다.</p>
+        <img src="Workflow.jpeg" alt="Workflow Diagram" class="diagram-img" />`,
+        systemDetailsTitle: "시스템 세부 설명",
+        systemDetailsContent: `<h3>LSTM 모델 개요</h3>
+        <p>LSTM은 인공 신경망의 한 종류로, 시퀀스 데이터를 입력받아 원하는 출력을 생성하는 모델입니다. 기존의 순환 신경망(RNN)은 장기 의존성 문제를 가지고 있었으나, LSTM은 셀 상태(cell state)라는 구조를 도입해 이 문제를 효과적으로 해결하였습니다. 셀 상태는 네트워크의 여러 시점에 걸쳐 정보를 유지하고 전달하여, 장기간의 데이터를 기억할 수 있도록 합니다.</p>
+        <h3>데이터 수집 및 전처리</h3>
+        <p><strong>데이터 수집:</strong> OpenCV API를 이용해 카메라로 30프레임의 데이터를 수집합니다.</p>
+        <p><strong>데이터 전처리:</strong> MediaPipe를 활용하여 얼굴, 왼손, 오른손, 그리고 몸의 좌표값(총 1662개)을 추출하고, 이를 NumPy 배열로 전처리합니다.</p>
+        <p><strong>학습:</strong> 전처리된 데이터를 바탕으로 LSTM 모델을 200 epochs 동안 훈련하며, 전체 훈련 과정을 30회 반복합니다.</p>`,
+        modesTitle: "사용자 모드와 학습 모드",
+        modesContent: `<h3>Learning 모드</h3>
+        <ol>
+          <li><strong>입력:</strong> 사용자가 학습할 단어를 입력합니다.</li>
+          <li><strong>데이터 저장:</strong> 입력된 단어에 해당하는 폴더를 생성해 학습 데이터를 저장합니다.</li>
+          <li><strong>캡처 및 전처리:</strong> OpenCV와 MediaPipe를 이용해 30프레임의 수화 데이터를 캡처하고, 전처리 후 저장합니다.</li>
+          <li><strong>학습:</strong> 데이터를 8:2의 비율로 훈련과 검증 데이터로 분할하여 LSTM 모델을 학습시킵니다.</li>
+          <li><strong>모델 저장:</strong> 학습된 모델은 <code>action.keras</code> 파일에 저장됩니다.</li>
+        </ol>
+        <h3>Motion Capture(사용자) 모드</h3>
+        <ol>
+          <li><strong>실시간 캡처:</strong> OpenCV를 통해 사용자의 수화 동작을 실시간으로 캡처합니다.</li>
+          <li><strong>랜드마크 추출:</strong> MediaPipe로 손, 얼굴, 포즈 등의 랜드마크를 추출하고, 신뢰도가 높은 데이터만 선별합니다.</li>
+          <li><strong>데이터 누적:</strong> 일정한 시퀀스 길이(예: 30프레임)로 데이터를 누적합니다.</li>
+          <li><strong>예측:</strong> 학습된 LSTM 모델에 누적된 데이터를 입력하여 예측을 수행합니다. 예측 결과 중 가장 높은 확률의 단어를 선택합니다.</li>
+          <li><strong>출력 조건:</strong> 최근 10개의 예측 결과가 모두 동일하며, 해당 예측의 확률이 95%를 초과하고 이전 예측 단어와 다를 경우에만 최종 단어가 음성으로 출력됩니다.</li>
+          <li><strong>음성 변환:</strong> Google Text-to-Speech API를 사용해 예측 단어를 음성으로 변환하고, 스피커를 통해 재생합니다.</li>
+          <li><strong>종료:</strong> 사용자가 종료 명령을 내리면 시스템이 종료됩니다.</li>
+        </ol>`,
+        lstmReasonTitle: "LSTM 선택 이유 및 고려사항",
+        lstmReasonContent: `<p>LSTM은 자연어 처리, 음성 인식, 제스처 인식 등 다양한 분야에서 우수한 성능을 보여온 모델입니다. 그 장점으로는 시퀀스 데이터 처리 능력과 장기 의존성 문제 해결 능력이 있으나, 단점으로는 모델 복잡도가 높아 학습 시간과 연산 자원이 많이 소요될 수 있다는 점이 있습니다.</p>
+        <p>현재 다른 모델(예: Transformer, 합성곱 신경망, 양방향 LSTM)도 고려 중이나, 우선 기본 데모 단계에서는 LSTM을 사용해 mac 환경에서 dmg 파일로 배포하는 수준에 도달했습니다. 다만, 정확도 향상을 위해 프레임 수, 예측 임계값 등의 최적화 작업이 추가로 필요하며, TensorFlow Keras 대신 PyTorch를 사용할 경우 동적 계산 그래프의 장점을 활용할 수 있을 것으로 예상됩니다.</p>`
       },
       eng: {
         navAbout: "About",
-        navContent: "Project Details"
+        navContent: "Project Details",
+        aboutTitle: "Project: SLDVT – Sign Language Detection Voice Translator",
+        aboutContent: `<p>
+          This project aims to develop a system that converts sign language gestures into real-time speech by utilizing LSTM (Long Short-Term Memory) neural networks—one of the advanced deep learning techniques. It is designed to reduce the communication gap between the deaf and the hearing and facilitate smoother communication for everyone.
+        </p>
+        <p>
+          The system captures the user's sign language gestures in real time using a camera or sensor. The captured video is analyzed by an LSTM-based action recognition model that is trained to recognize various static and dynamic gestures. The LSTM network effectively models the temporal dependencies of sequence data to reflect the dynamic characteristics of sign language.
+        </p>
+        <p>
+          The recognized gestures are converted into text, which is then synthesized into speech using text-to-speech (TTS) technology. The synthesized speech is output through speakers or headphones, enabling smooth communication with those who do not understand sign language.
+        </p>
+        <p>
+          Real-time sign language recognition: Gestures are recognized instantly without delay, ensuring smooth communication. Multi-gesture recognition: The model is trained to recognize both static and dynamic gestures. Accuracy and robustness: The model is trained on diverse datasets to maintain high accuracy even in varying environments and lighting conditions. Accessibility: The system is designed to be user-friendly regardless of the user's proficiency in sign language.
+        </p>
+        <p>
+          This system supports reliable communication for the deaf and hard-of-hearing in social and professional settings by leveraging advanced learning techniques and the capabilities of LSTM networks to break down communication barriers.
+        </p>`,
+        demoTitle: "Demo Video",
+        contentTitle: "Architecture and Workflow",
+        contentContent: `<h3>High Level Diagram</h3>
+        <p>This diagram represents the high-level system structure.</p>
+        <img src="HLD.png" alt="High Level Diagram" class="diagram-img" />
+        <h3>Workflow</h3>
+        <p>This workflow visually explains the process and data flow of the system.</p>
+        <img src="Workflow.jpeg" alt="Workflow Diagram" class="diagram-img" />`,
+        systemDetailsTitle: "System Details",
+        systemDetailsContent: `<h3>Overview of LSTM Model</h3>
+        <p>LSTM is a type of artificial neural network that receives sequence data and produces desired outputs. While traditional recurrent neural networks (RNNs) suffer from long-term dependency issues, LSTM overcomes these problems by introducing a structure called the cell state, which retains and transfers information across different time steps, enabling long-term data retention.</p>
+        <h3>Data Collection and Preprocessing</h3>
+        <p><strong>Data Collection:</strong> Data is captured at 30 frames using the OpenCV API and a camera.</p>
+        <p><strong>Data Preprocessing:</strong> MediaPipe is used to extract the coordinates of the face, left hand, right hand, and body (a total of 1662 values), which are then preprocessed into a NumPy array.</p>
+        <p><strong>Training:</strong> Based on the preprocessed data, the LSTM model is trained for 200 epochs, and the entire training process is repeated 30 times.</p>`,
+        modesTitle: "User Mode and Learning Mode",
+        modesContent: `<h3>Learning Mode</h3>
+        <ol>
+          <li><strong>Input:</strong> The user enters the word to be learned.</li>
+          <li><strong>Data Storage:</strong> A folder corresponding to the entered word is created to store the learning data.</li>
+          <li><strong>Capture and Preprocessing:</strong> 30 frames of sign language data are captured using OpenCV and MediaPipe, preprocessed, and stored.</li>
+          <li><strong>Training:</strong> The data is split into training and validation sets in an 8:2 ratio and used to train the LSTM model.</li>
+          <li><strong>Model Saving:</strong> The trained model is saved in the <code>action.keras</code> file.</li>
+        </ol>
+        <h3>Motion Capture (User Mode)</h3>
+        <ol>
+          <li><strong>Real-time Capture:</strong> The user's sign language movements are captured in real time using OpenCV.</li>
+          <li><strong>Landmark Extraction:</strong> Landmarks for the hands, face, and pose are extracted using MediaPipe, and only high-confidence data is selected.</li>
+          <li><strong>Data Accumulation:</strong> Data is accumulated in a fixed sequence length (e.g., 30 frames).</li>
+          <li><strong>Prediction:</strong> The accumulated data is input into the trained LSTM model for prediction, and the word with the highest probability is selected.</li>
+          <li><strong>Output Condition:</strong> The final word is output as speech only if the last 10 predictions are identical, the prediction probability exceeds 95%, and it differs from the previously predicted word.</li>
+          <li><strong>Speech Conversion:</strong> The predicted word is converted to speech using the Google Text-to-Speech API and played through speakers.</li>
+          <li><strong>Termination:</strong> The system terminates when the user issues an exit command.</li>
+        </ol>`,
+        lstmReasonTitle: "Reasons for Choosing LSTM and Considerations",
+        lstmReasonContent: `<p>LSTM has demonstrated excellent performance in various fields such as natural language processing, speech recognition, and gesture recognition. Its strengths lie in its ability to handle sequence data and resolve long-term dependency issues, while its drawbacks include high model complexity and the consequent need for extensive training time and computational resources.</p>
+        <p>Although other models (e.g., Transformer, Convolutional Neural Networks, Bidirectional LSTM) are also being considered, the current basic demo utilizes LSTM and has reached the stage of deployment in macOS using dmg files. However, further optimization work on frame count, prediction thresholds, etc., is required to improve accuracy, and switching from TensorFlow Keras to PyTorch may allow leveraging the advantages of dynamic computation graphs.</p>`
       }
     };
 
@@ -213,11 +322,21 @@
       const t = translations[lang];
       document.getElementById('navAbout').textContent = t.navAbout;
       document.getElementById('navContent').textContent = t.navContent;
+      document.getElementById('aboutTitle').textContent = t.aboutTitle;
+      document.getElementById('aboutContent').innerHTML = t.aboutContent;
+      document.getElementById('demoTitle').textContent = t.demoTitle;
+      document.getElementById('contentTitle').textContent = t.contentTitle;
+      document.getElementById('contentContent').innerHTML = t.contentContent;
+      document.getElementById('systemDetailsTitle').textContent = t.systemDetailsTitle;
+      document.getElementById('systemDetailsContent').innerHTML = t.systemDetailsContent;
+      document.getElementById('modesTitle').textContent = t.modesTitle;
+      document.getElementById('modesContent').innerHTML = t.modesContent;
+      document.getElementById('lstmReasonTitle').textContent = t.lstmReasonTitle;
+      document.getElementById('lstmReasonContent').innerHTML = t.lstmReasonContent;
       localStorage.setItem('lang', lang);
     }
 
-    const langToggleBtn = document.getElementById('langToggle');
-    langToggleBtn.addEventListener('click', () => {
+    document.getElementById('langToggle').addEventListener('click', () => {
       const currentLang = localStorage.getItem('lang') || 'kor';
       setLanguage(currentLang === 'kor' ? 'eng' : 'kor');
     });
