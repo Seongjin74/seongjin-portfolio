@@ -12,18 +12,42 @@
   />
   <!-- style.css 파일 참조 -->
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* 추가 수정 스타일 (이미지 크기, 유튜브 영상 크기 등) */
+    .diagram-img {
+      max-width: 80%;
+      display: block;
+      margin-bottom: 1rem;
+    }
+    .video-embed {
+      max-width: 600px;
+      width: 100%;
+      height: 337px;
+      margin-bottom: 2rem;
+    }
+    /* 프로젝트 소개 내 문단은 좌측 정렬 */
+    .section.about p,
+    .section.about ul {
+      text-align: left;
+      margin-bottom: 1rem;
+    }
+    /* bullet list 제거를 위해 ul를 block 형태로 표시(필요시 제거) */
+    .section.about ul {
+      list-style: none;
+      padding-left: 0;
+    }
+  </style>
 </head>
 <body>
   <header class="site-header">
     <div class="container header-container">
       <div class="logo">
-        <a href="#">Seongjin's Portfolio</a>
+        <a href="https://seongjin74.github.io/seongjin-portfolio/">Seongjin's Portfolio</a>
       </div>
       <nav class="site-nav">
         <ul>
           <li><a href="#about" id="navAbout">소개</a></li>
           <li><a href="#content" id="navContent">프로젝트 상세</a></li>
-          <li><a href="#contact" id="navContact">연락하기</a></li>
         </ul>
       </nav>
       <div class="header-controls">
@@ -47,15 +71,20 @@
         <p>
           인식된 제스처는 텍스트 정보로 변환된 후, 텍스트-투-스피치(TTS) 기술을 이용해 음성으로 합성됩니다. 합성된 음성은 스피커나 헤드폰을 통해 출력되어, 수화를 모르는 사람들과도 원활한 소통이 가능하도록 합니다.
         </p>
-        <ul>
-          <li><strong>실시간 수화 인식</strong>: 지연 없이 즉각적으로 제스처를 인식하여 소통이 원활합니다.</li>
-          <li><strong>다중 제스처 인식</strong>: 정적 제스처와 동적 제스처 모두를 인식할 수 있도록 학습되었습니다.</li>
-          <li><strong>정확성과 견고성</strong>: 다양한 환경과 조명 조건에서도 높은 정확도를 유지할 수 있도록 다양한 데이터셋을 활용해 학습하였습니다.</li>
-          <li><strong>접근성</strong>: 수화 숙련도에 상관없이 누구나 쉽게 사용할 수 있도록 설계되었습니다.</li>
-        </ul>
+        <p>
+          실시간 수화 인식: 지연 없이 즉각적으로 제스처를 인식하여 소통이 원활합니다. 다중 제스처 인식: 정적 제스처와 동적 제스처 모두를 인식할 수 있도록 학습되었습니다. 정확성과 견고성: 다양한 환경과 조명 조건에서도 높은 정확도를 유지할 수 있도록 다양한 데이터셋을 활용해 학습하였습니다. 접근성: 수화 숙련도에 상관없이 누구나 쉽게 사용할 수 있도록 설계되었습니다.
+        </p>
         <p>
           이러한 시스템은 청각 장애인 및 난청인들이 사회적, 직업적 환경에서 신뢰할 수 있는 소통 수단을 제공받도록 지원하며, 깊이 있는 학습 기법과 LSTM 네트워크의 역량을 통해 소통의 장벽을 허무는 것을 목표로 합니다.
         </p>
+      </div>
+    </section>
+
+    <!-- 아키텍처 및 워크플로우 위에 유튜브 데모 영상 삽입 -->
+    <section id="demo" class="section">
+      <div class="container" style="text-align: center;">
+        <h2>데모 영상</h2>
+        <iframe class="video-embed" src="https://www.youtube.com/embed/rw1ZkWsNUjY" title="데모 영상" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
     </section>
 
@@ -65,10 +94,10 @@
         <h2>아키텍처 및 워크플로우</h2>
         <h3>High Level Diagram</h3>
         <p>상위 수준의 시스템 구조를 나타낸 다이어그램입니다.</p>
-        <img src="HLD.png" alt="High Level Diagram" style="max-width:100%; margin-bottom: 1rem;" />
+        <img src="HLD.png" alt="High Level Diagram" class="diagram-img" />
         <h3>Workflow</h3>
         <p>시스템의 동작 과정 및 데이터 흐름을 시각적으로 설명한 워크플로우입니다.</p>
-        <img src="Workflow.jpeg" alt="Workflow Diagram" style="max-width:100%;" />
+        <img src="Workflow.jpeg" alt="Workflow Diagram" class="diagram-img" />
       </div>
     </section>
 
@@ -172,17 +201,11 @@
     const translations = {
       kor: {
         navAbout: "소개",
-        navContent: "프로젝트 상세",
-        navContact: "연락하기",
-        darkToggle: "🌙",
-        langToggle: "ENG"
+        navContent: "프로젝트 상세"
       },
       eng: {
         navAbout: "About",
-        navContent: "Project Details",
-        navContact: "Contact",
-        darkToggle: "☀️",
-        langToggle: "KOR"
+        navContent: "Project Details"
       }
     };
 
@@ -190,9 +213,6 @@
       const t = translations[lang];
       document.getElementById('navAbout').textContent = t.navAbout;
       document.getElementById('navContent').textContent = t.navContent;
-      document.getElementById('navContact').textContent = t.navContact;
-      document.getElementById('darkModeToggle').textContent = t.darkToggle;
-      document.getElementById('langToggle').textContent = t.langToggle;
       localStorage.setItem('lang', lang);
     }
 
