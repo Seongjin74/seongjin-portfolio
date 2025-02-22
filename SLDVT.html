@@ -1,251 +1,208 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <title>SLDVT - 수화 감지 음성 번역기</title>
-  <style>
-    body { font-family: Arial, sans-serif; line-height: 1.6; margin: 20px; }
-    header, section { margin-bottom: 40px; }
-    h1, h2, h3 { color: #2c3e50; }
-    table { border-collapse: collapse; width: 100%; }
-    th, td { border: 1px solid #ddd; padding: 8px; }
-    th { background-color: #f2f2f2; text-align: left; }
-    pre { background: #f4f4f4; padding: 10px; }
-    .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; }
-    .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SLDVT – 수화 감지 음성 번역기</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap"
+    rel="stylesheet"
+  />
+  <!-- style.css 파일 참조 -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-  <header>
-    <h1>프로젝트 - SLDVT</h1>
-    <p><strong>수화 감지 음성 번역기</strong></p>
+  <header class="site-header">
+    <div class="container header-container">
+      <div class="logo">
+        <a href="#">Seongjin's Portfolio</a>
+      </div>
+      <nav class="site-nav">
+        <ul>
+          <li><a href="#about" id="navAbout">소개</a></li>
+          <li><a href="#content" id="navContent">프로젝트 상세</a></li>
+          <li><a href="#contact" id="navContact">연락하기</a></li>
+        </ul>
+      </nav>
+      <div class="header-controls">
+        <button id="darkModeToggle" title="다크모드 전환">🌙</button>
+        <button id="langToggle" class="lang-btn" title="언어 전환">ENG</button>
+      </div>
+    </div>
   </header>
 
-  <nav>
-    <ul>
-      <li><a href="#about">프로젝트 소개</a></li>
-      <li><a href="#lstm">LSTM 설명 및 사용 이유</a></li>
-      <li><a href="#training">수화 데이터 수집 및 모델 훈련</a></li>
-      <li><a href="#modes">러닝 모드와 사용자 모드</a></li>
-      <li><a href="#deployment">데모 및 개선점</a></li>
-      <li><a href="#demo">데모 영상</a></li>
-      <li><a href="#dependency">의존성</a></li>
-      <li><a href="#architecture">아키텍처</a></li>
-      <li><a href="#gettingstarted">시작하기</a></li>
-      <li><a href="#troubleshoot">문제 해결 가이드</a></li>
-    </ul>
-  </nav>
-
-  <section id="about">
-    <h2>프로젝트 소개</h2>
-    <p>
-      우리 프로젝트는 깊이 있는 학습 기법, 특히 행동 인식을 위한 장기 단기 메모리(LSTM) 신경망을 활용하여 수화 제스처를 음성으로 변환하는 시스템을 개발함으로써 청각 장애인과 비장애인 간의 소통 격차를 해소하는 것을 목표로 합니다.
-    </p>
-    <p>
-      시스템은 카메라나 센서를 사용하여 사용자가 수행하는 실시간 수화 제스처를 캡처합니다. 캡처된 제스처는 LSTM 기반 행동 인식 모델에 의해 처리 및 분석되며, 이 모델은 다양한 수화 제스처와 움직임을 인식하도록 학습되어 있습니다. 인공 신경망 중 LSTM은 시퀀스 데이터를 입력받아 원하는 출력을 생성하는 모델입니다. 기존의 순환 신경망(RNN)은 장기 의존성 문제를 갖고 있으나, LSTM은 '셀 상태(cell state)'라는 구조를 추가하여 장기 기억을 가능하게 함으로써 이 문제를 개선하였습니다. 셀 상태는 정보를 네트워크의 다양한 시점에 걸쳐 유지하고 전달하는 역할을 하여 장기간 저장할 수 있습니다.
-    </p>
-    <p>
-      제스처가 인식되면, 해당 언어 정보가 추출되어 텍스트-투-스피치(TTS) 기술을 통해 음성으로 합성됩니다. 이 합성된 음성은 스피커나 헤드폰을 통해 출력되어, 수화를 이해하지 못하는 사람들과의 효과적인 소통이 가능하도록 합니다.
-    </p>
-    <p><em>(맨 위로로 돌아가기)</em></p>
-  </section>
-
-  <section id="lstm">
-    <h2>LSTM 사용 이유 및 장단점</h2>
-    <h3>이전 연구에서의 성공 사례</h3>
-    <ul>
-      <li>LSTM은 다양한 시퀀스 데이터 처리 문제에서 우수한 성능을 보여왔습니다.</li>
-      <li>자연어 처리, 음성 인식, 제스처 인식 등의 분야에서 널리 사용되어 왔습니다.</li>
-      <li>이러한 성공 사례들은 LSTM이 수화 인식 문제에도 효과적으로 적용될 수 있음을 시사합니다.</li>
-    </ul>
-    <h3>LSTM의 장단점</h3>
-    <ul>
-      <li><strong>장점</strong>: 시퀀스 데이터를 효과적으로 처리할 수 있으며, 장기 의존성 문제를 해결하여 장기간의 맥락을 포착할 수 있습니다.</li>
-      <li><strong>단점</strong>: 모델의 복잡도가 높아 학습에 많은 시간과 연산 자원이 필요할 수 있습니다.</li>
-    </ul>
-    <p>
-      참고로, Transformer, 합성곱 신경망, 양방향 LSTM 등의 다른 모델도 고려할 수 있으나 현재로서는 선택지에 포함시키지 않았습니다.
-    </p>
-  </section>
-
-  <section id="training">
-    <h2>수화 데이터 수집 및 모델 훈련</h2>
-    <p>
-      저희는 <strong>opencv</strong> API를 이용하여 카메라를 통해 30프레임의 데이터를 수집하며, <strong>MediaPipe</strong>를 활용하여 얼굴, 왼손, 오른손, 그리고 몸에 대한 좌표값 총 1662개의 입력값을 추출합니다. 이 데이터를 기반으로 모델을 훈련시키며, 모델은 200 epochs, 즉 같은 데이터를 200번 반복하여 훈련하고 이를 총 30번 반복합니다.
-    </p>
-    <p>
-      이후 사용자가 수화를 음성으로 변환하고자 할 때에도 동일하게 30프레임의 데이터를 캡처하고, 포즈 데이터를 시퀀스 값으로 추출하여 모델에 입력합니다. 모델은 높은 클래스 확률값을 출력하게 되며, 최근 10개의 예측 결과가 모두 동일하고 해당 예측의 확률이 95%를 초과하며, 이전에 예측된 단어와 다를 경우에만 음성으로 출력됩니다. 음성 출력에는 구글의 Google Text-to-Speech API를 사용하였습니다.
-    </p>
-  </section>
-
-  <section id="modes">
-    <h2>러닝 모드와 사용자 모드</h2>
-    <h3>러닝 모드 (Learning Mode)</h3>
-    <ol>
-      <li><strong>Input Learning Word:</strong> 사용자가 학습시킬 수화 단어를 입력합니다.</li>
-      <li><strong>Generate Folder for Word:</strong> 입력된 단어에 대한 폴더를 생성하여 학습 데이터를 저장할 공간을 마련합니다.</li>
-      <li><strong>mcapture Capturing Frames:</strong> OpenCV를 통해 웹캠에서 사용자의 수화 동작을 일정 시간 동안(예: 30프레임) 캡처합니다.</li>
-      <li><strong>Data_process:</strong> MediaPipe를 사용하여 캡처된 프레임에서 손, 얼굴, 포즈 등의 랜드마크 포인트를 추출하고, NumPy 배열로 데이터를 전처리합니다.</li>
-      <li><strong>Dataset:</strong> 전처리된 랜드마크 데이터를 해당 단어의 폴더에 저장하여 데이터셋을 구축하고, 8:2 비율로 훈련 데이터와 검증 데이터로 나눕니다.</li>
-      <li><strong>LSTM MODEL:</strong> 모델의 입력으로 랜드마크 시퀀스를, 출력으로 단어 레이블을 지정하여 학습을 진행한 후, 학습된 모델을 <code>action.keras</code> 파일에 저장합니다.</li>
-    </ol>
-
-    <h3>사용자 모드 (Motion Capture)</h3>
-    <ol>
-      <li><strong>Motion Capture:</strong> OpenCV를 통해 웹캠에서 사용자의 수화 동작을 실시간으로 캡처합니다.</li>
-      <li><strong>Landmarks:</strong> MediaPipe를 사용하여 실시간 프레임에서 손, 얼굴, 포즈 등의 랜드마크 포인트를 추출하고, MIN_DETECTION_CONFIDENCE와 MIN_TRACKING_CONFIDENCE 임계값을 적용하여 신뢰도가 높은 랜드마크만 선별합니다.</li>
-      <li><strong>Dataset:</strong> 추출된 랜드마크 데이터를 일정한 시퀀스 길이(예: 30프레임)로 누적하여 저장합니다.</li>
-      <li><strong>LSTM MODEL:</strong>
+  <main>
+    <!-- 프로젝트 소개 섹션 -->
+    <section id="about" class="section about">
+      <div class="container">
+        <h1>프로젝트: SLDVT – 수화 감지 음성 번역기</h1>
+        <p>
+          본 프로젝트는 깊이 있는 학습 기법 중 하나인 LSTM(Long Short-Term Memory) 신경망을 활용하여, 수화 제스처를 실시간 음성으로 변환하는 시스템을 개발하는 것을 목표로 합니다. 이를 통해 청각 장애인과 비장애인 사이의 소통 격차를 줄이고, 모두가 보다 원활하게 소통할 수 있도록 돕고자 합니다.
+        </p>
+        <p>
+          시스템은 카메라나 센서를 통해 사용자의 수화 제스처를 실시간으로 캡처합니다. 캡처된 영상은 LSTM 기반의 행동 인식 모델을 통해 분석되며, 이 모델은 다양한 정적 및 동적 제스처를 학습하여 인식할 수 있도록 설계되었습니다. LSTM 네트워크는 시퀀스 데이터의 시간적 의존성을 효과적으로 모델링하여 수화의 동적인 특성을 잘 반영합니다.
+        </p>
+        <p>
+          인식된 제스처는 텍스트 정보로 변환된 후, 텍스트-투-스피치(TTS) 기술을 이용해 음성으로 합성됩니다. 합성된 음성은 스피커나 헤드폰을 통해 출력되어, 수화를 모르는 사람들과도 원활한 소통이 가능하도록 합니다.
+        </p>
         <ul>
-          <li>러닝 모드에서 학습된 LSTM 모델을 불러옵니다.</li>
-          <li>누적된 랜드마크 시퀀스 데이터를 모델에 입력하여 예측을 수행합니다.</li>
-          <li>예측 결과 중 가장 확률이 높은 단어를 선택합니다.</li>
-          <li>일정 횟수(예: 10회) 동안 동일한 단어가 연속으로 예측되고, 그 확률이 임계값(예: 0.95)을 초과할 경우에만 최종 예측 결과로 출력합니다.</li>
+          <li><strong>실시간 수화 인식</strong>: 지연 없이 즉각적으로 제스처를 인식하여 소통이 원활합니다.</li>
+          <li><strong>다중 제스처 인식</strong>: 정적 제스처와 동적 제스처 모두를 인식할 수 있도록 학습되었습니다.</li>
+          <li><strong>정확성과 견고성</strong>: 다양한 환경과 조명 조건에서도 높은 정확도를 유지할 수 있도록 다양한 데이터셋을 활용해 학습하였습니다.</li>
+          <li><strong>접근성</strong>: 수화 숙련도에 상관없이 누구나 쉽게 사용할 수 있도록 설계되었습니다.</li>
         </ul>
-      </li>
-      <li><strong>Word Result:</strong> 예측된 수화 단어를 결과로 출력합니다.</li>
-      <li><strong>Voice_translate:</strong> 예측된 수화 단어를 음성으로 변환합니다.</li>
-      <li><strong>PlaySound:</strong> 변환된 음성을 스피커로 재생하여 사용자에게 들려줍니다.</li>
-      <li><strong>User Input KILLPROCESS:</strong> 사용자가 종료 명령을 내리면 프로그램을 종료합니다.</li>
-    </ol>
-  </section>
+        <p>
+          이러한 시스템은 청각 장애인 및 난청인들이 사회적, 직업적 환경에서 신뢰할 수 있는 소통 수단을 제공받도록 지원하며, 깊이 있는 학습 기법과 LSTM 네트워크의 역량을 통해 소통의 장벽을 허무는 것을 목표로 합니다.
+        </p>
+      </div>
+    </section>
 
-  <section id="deployment">
-    <h2>초기 기본 데모 및 개선점</h2>
-    <p>
-      초기 기본 데모로, 저희는 dmg 파일로 추출하여 Mac 환경에서 구동할 수 있도록 배포하는 단계까지 진행하였습니다. 그러나 정확도 문제와 관련하여 개선해야 할 점들을 발견하였습니다.
-    </p>
-    <p>
-      첫 번째로, 아직 최적의 임계값을 찾지 못했습니다. 예를 들어, 데이터를 받을 때 몇 프레임이 최적인지, 그리고 모델 예측값이 95%를 초과할 경우에만 음성 변환을 수행하는 것이 최적의 값인지에 대한 조정이 필요합니다.
-    </p>
-    <p>
-      두 번째로, 현재 저희는 LSTM 모델 구현에 TensorFlow Keras를 사용하고 있지만, PyTorch를 사용하면 동적 계산 그래프의 장점을 활용하여 프레임 수에 따른 데이터 처리를 더욱 유연하게 할 수 있을 것으로 보입니다.
-    </p>
-    <p>
-      마지막으로, 물리적인 측면에서 노트북 카메라를 통해 포즈 데이터를 수집하고 있는데, 최적의 카메라 각도를 찾는 것도 개선 사항 중 하나입니다. 이는 사용자에게 다소 불편할 수 있으나, 향후 개선을 통해 보완할 예정입니다.
-    </p>
-  </section>
+    <!-- 아키텍처 및 워크플로우 섹션 -->
+    <section id="content" class="section">
+      <div class="container">
+        <h2>아키텍처 및 워크플로우</h2>
+        <h3>High Level Diagram</h3>
+        <p>상위 수준의 시스템 구조를 나타낸 다이어그램입니다.</p>
+        <img src="HLD.png" alt="High Level Diagram" style="max-width:100%; margin-bottom: 1rem;" />
+        <h3>Workflow</h3>
+        <p>시스템의 동작 과정 및 데이터 흐름을 시각적으로 설명한 워크플로우입니다.</p>
+        <img src="Workflow.jpeg" alt="Workflow Diagram" style="max-width:100%;" />
+      </div>
+    </section>
 
-  <section id="demo">
-    <h2>데모 영상</h2>
-    <div class="video-container">
-      <iframe src="https://www.youtube.com/embed/rw1ZkWsNUjY" title="데모 영상" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <!-- 시스템 세부 설명 섹션 -->
+    <section id="system-details" class="section">
+      <div class="container">
+        <h2>시스템 세부 설명</h2>
+        <h3>LSTM 모델 개요</h3>
+        <p>
+          LSTM은 인공 신경망의 한 종류로, 시퀀스 데이터를 입력받아 원하는 출력을 생성하는 모델입니다. 기존의 순환 신경망(RNN)은 장기 의존성 문제를 가지고 있었으나, LSTM은 셀 상태(cell state)라는 구조를 도입해 이 문제를 효과적으로 해결하였습니다. 셀 상태는 네트워크의 여러 시점에 걸쳐 정보를 유지하고 전달하여, 장기간의 데이터를 기억할 수 있도록 합니다.
+        </p>
+        <h3>데이터 수집 및 전처리</h3>
+        <p>
+          <strong>데이터 수집:</strong> OpenCV API를 이용해 카메라로 30프레임의 데이터를 수집합니다.
+        </p>
+        <p>
+          <strong>데이터 전처리:</strong> MediaPipe를 활용하여 얼굴, 왼손, 오른손, 그리고 몸의 좌표값(총 1662개)을 추출하고, 이를 NumPy 배열로 전처리합니다.
+        </p>
+        <p>
+          <strong>학습:</strong> 전처리된 데이터를 바탕으로 LSTM 모델을 200 epochs 동안 훈련하며, 전체 훈련 과정을 30회 반복합니다.
+        </p>
+      </div>
+    </section>
+
+    <!-- 사용자 모드와 학습 모드 섹션 -->
+    <section id="modes" class="section">
+      <div class="container">
+        <h2>사용자 모드와 학습 모드</h2>
+        <h3>Learning 모드</h3>
+        <ol>
+          <li><strong>입력:</strong> 사용자가 학습할 단어를 입력합니다.</li>
+          <li><strong>데이터 저장:</strong> 입력된 단어에 해당하는 폴더를 생성해 학습 데이터를 저장합니다.</li>
+          <li><strong>캡처 및 전처리:</strong> OpenCV와 MediaPipe를 이용해 30프레임의 수화 데이터를 캡처하고, 전처리 후 저장합니다.</li>
+          <li><strong>학습:</strong> 데이터를 8:2의 비율로 훈련과 검증 데이터로 분할하여 LSTM 모델을 학습시킵니다.</li>
+          <li><strong>모델 저장:</strong> 학습된 모델은 <code>action.keras</code> 파일에 저장됩니다.</li>
+        </ol>
+        <h3>Motion Capture(사용자) 모드</h3>
+        <ol>
+          <li><strong>실시간 캡처:</strong> OpenCV를 통해 사용자의 수화 동작을 실시간으로 캡처합니다.</li>
+          <li><strong>랜드마크 추출:</strong> MediaPipe로 손, 얼굴, 포즈 등의 랜드마크를 추출하고, 신뢰도가 높은 데이터만 선별합니다.</li>
+          <li><strong>데이터 누적:</strong> 일정한 시퀀스 길이(예: 30프레임)로 데이터를 누적합니다.</li>
+          <li><strong>예측:</strong> 학습된 LSTM 모델에 누적된 데이터를 입력하여 예측을 수행합니다. 예측 결과 중 가장 높은 확률의 단어를 선택합니다.</li>
+          <li><strong>출력 조건:</strong> 최근 10개의 예측 결과가 모두 동일하며, 해당 예측의 확률이 95%를 초과하고 이전 예측 단어와 다를 경우에만 최종 단어가 음성으로 출력됩니다.</li>
+          <li><strong>음성 변환:</strong> Google Text-to-Speech API를 사용해 예측 단어를 음성으로 변환하고, 스피커를 통해 재생합니다.</li>
+          <li><strong>종료:</strong> 사용자가 종료 명령을 내리면 시스템이 종료됩니다.</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- LSTM 선택 이유 섹션 -->
+    <section id="lstm-reason" class="section">
+      <div class="container">
+        <h2>LSTM 선택 이유 및 고려사항</h2>
+        <p>
+          LSTM은 자연어 처리, 음성 인식, 제스처 인식 등 다양한 분야에서 우수한 성능을 보여온 모델입니다. 그 장점으로는 시퀀스 데이터 처리 능력과 장기 의존성 문제 해결 능력이 있으나, 단점으로는 모델 복잡도가 높아 학습 시간과 연산 자원이 많이 소요될 수 있다는 점이 있습니다.
+        </p>
+        <p>
+          현재 다른 모델(예: Transformer, 합성곱 신경망, 양방향 LSTM)도 고려 중이나, 우선 기본 데모 단계에서는 LSTM을 사용해 mac 환경에서 dmg 파일로 배포하는 수준에 도달했습니다. 다만, 정확도 향상을 위해 프레임 수, 예측 임계값 등의 최적화 작업이 추가로 필요하며, TensorFlow Keras 대신 PyTorch를 사용할 경우 동적 계산 그래프의 장점을 활용할 수 있을 것으로 예상됩니다.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2025 Seongjin. All Rights Reserved.</p>
     </div>
-  </section>
+  </footer>
 
-  <section id="dependency">
-    <h2>의존성</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>의존성</th>
-          <th>버전</th>
-          <th>비고</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>TensorFlow</td>
-          <td>2.15.0</td>
-          <td>현재 메인 브랜치 사용 중</td>
-        </tr>
-        <tr>
-          <td>opencv-python</td>
-          <td>4.9.0.80</td>
-          <td>현재 메인 브랜치 사용 중</td>
-        </tr>
-        <tr>
-          <td>mediatype</td>
-          <td>0.10.9</td>
-          <td>현재 메인 브랜치 사용 중</td>
-        </tr>
-        <tr>
-          <td>sklearn</td>
-          <td>1.4.0</td>
-          <td>현재 메인 브랜치 사용 중</td>
-        </tr>
-        <tr>
-          <td>matplotlib</td>
-          <td>3.8.2</td>
-          <td>현재 메인 브랜치 사용 중</td>
-        </tr>
-        <tr>
-          <td>playsound</td>
-          <td>최신</td>
-          <td>현재 메인 브랜치 사용 중</td>
-        </tr>
-        <tr>
-          <td>gtts</td>
-          <td>최신</td>
-          <td>현재 메인 브랜치 사용 중</td>
-        </tr>
-        <tr>
-          <td>tempFile</td>
-          <td>TBD</td>
-          <td>voice-feature 브랜치에서만 사용</td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
+  <button id="btnTop" title="최상단으로 이동">&#8679;</button>
 
-  <section id="architecture">
-    <h2>아키텍처</h2>
-    <h3>High Level Diagram</h3>
-    <p>(상위 수준 다이어그램 이미지 또는 설명)</p>
-    <h3>Low Level Diagram</h3>
-    <p>(하위 수준 다이어그램 이미지 또는 설명)</p>
-  </section>
+  <script>
+    // 다크 모드 토글
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const currentTheme = localStorage.getItem('theme');
+    if (currentTheme === 'dark') {
+      document.body.classList.add('dark-mode');
+      darkModeToggle.textContent = '☀️';
+    }
+    darkModeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      if (document.body.classList.contains('dark-mode')) {
+        localStorage.setItem('theme', 'dark');
+        darkModeToggle.textContent = '☀️';
+      } else {
+        localStorage.setItem('theme', 'light');
+        darkModeToggle.textContent = '🌙';
+      }
+    });
 
-  <section id="gettingstarted">
-    <h2>시작하기</h2>
-    <h3>필수 조건</h3>
-    <p>가상 환경 시스템 설치:</p>
-    <pre>
-pip3 install venv
-    </pre>
-    <h3>설치 및 서비스 설정</h3>
-    <ol>
-      <li>리포지토리 클론:
-        <pre>
-git clone https://github.com/HoyeonS/SLDVT.git
-        </pre>
-      </li>
-      <li>가상 환경 활성화:
-        <pre>
-source ~/path/to/env/bin/activate
-        </pre>
-      </li>
-      <li>의존성 설치:
-        <pre>
-cd /SLDVT && pip3 install -r requirements.txt
-        </pre>
-      </li>
-      <li>파이썬 파일 실행:
-        <pre>
-python3 mcapture.py
-        </pre>
-      </li>
-    </ol>
-    <p><em>(맨 위로로 돌아가기)</em></p>
-  </section>
+    // 최상단 버튼
+    const btnTop = document.getElementById('btnTop');
+    window.addEventListener('scroll', () => {
+      btnTop.style.display = window.pageYOffset > 300 ? 'block' : 'none';
+    });
+    btnTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
 
-  <section id="troubleshoot">
-    <h2>문제 해결 가이드</h2>
-    <h3>Windows 버전 가상 환경 활성화</h3>
-    <pre>
-~ .\path\to\env\Scripts\activate.bat
-OR
-~ .\path\to\env\Scripts\activate.ps
-    </pre>
-    <h3>Mediapipe 설치 오류</h3>
-    <p>파이썬 버전을 다시 확인해보세요.</p>
-    <pre>
-python3 --version
-    </pre>
-    <h3>requirements.txt 설치 오류</h3>
-    <p>각 의존성별로 설치해보시기 바랍니다.</p>
-  </section>
+    // 언어 전환 (간단한 예시)
+    const translations = {
+      kor: {
+        navAbout: "소개",
+        navContent: "프로젝트 상세",
+        navContact: "연락하기",
+        darkToggle: "🌙",
+        langToggle: "ENG"
+      },
+      eng: {
+        navAbout: "About",
+        navContent: "Project Details",
+        navContact: "Contact",
+        darkToggle: "☀️",
+        langToggle: "KOR"
+      }
+    };
 
+    function setLanguage(lang) {
+      const t = translations[lang];
+      document.getElementById('navAbout').textContent = t.navAbout;
+      document.getElementById('navContent').textContent = t.navContent;
+      document.getElementById('navContact').textContent = t.navContact;
+      document.getElementById('darkModeToggle').textContent = t.darkToggle;
+      document.getElementById('langToggle').textContent = t.langToggle;
+      localStorage.setItem('lang', lang);
+    }
+
+    const langToggleBtn = document.getElementById('langToggle');
+    langToggleBtn.addEventListener('click', () => {
+      const currentLang = localStorage.getItem('lang') || 'kor';
+      setLanguage(currentLang === 'kor' ? 'eng' : 'kor');
+    });
+    const savedLang = localStorage.getItem('lang') || 'kor';
+    setLanguage(savedLang);
+  </script>
 </body>
 </html>
