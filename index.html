@@ -48,10 +48,11 @@
         <div class="projects-grid">
           <!-- Project 1: Wafer-Defect-Classification -->
           <div class="project-card">
-            <h3>Wafer-Defect-Classification</h3>
-            <p id="proj1Desc">
+            <h3 class="project-title">Wafer-Defect-Classification</h3>
+            <p class="project-subtitle" id="proj1Subtitle">
               증강 데이터 생성과 반지도학습 기법을 결합해 다양한 웨이퍼 결함 유형을 분류하는 딥러닝 모델 구축
-              <br><br>
+            </p>
+            <p class="project-content" id="proj1Content">
               제한된 라벨 데이터를 효과적으로 활용하기 위해 준지도 학습 기법을 적용한 프로젝트로, FixMatch 알고리즘을 기반으로 pseudo-label 생성과 약한/강한 증강 전략, 특히 autoencoder를 통한 재구성 기법을 결합하여 반도체 제조 공정의 웨이퍼 결함 탐지 문제를 해결하였습니다. 간결한 CNN 모델을 활용해 지도학습 대비 약 2~3% 높은 테스트 정확도를 달성하며, 라벨이 없는 데이터를 활용해 준지도 학습의 효과를 극대화할 수 있음을 입증하였습니다.
             </p>
             <div class="card-buttons">
@@ -61,10 +62,11 @@
           </div>
           <!-- Project 2: Efficient-Semiconductor-Anomaly-Detection -->
           <div class="project-card">
-            <h3>Efficient-Semiconductor-Anomaly-Detection</h3>
-            <p id="proj2Desc">
+            <h3 class="project-title">Efficient-Semiconductor-Anomaly-Detection</h3>
+            <p class="project-subtitle" id="proj2Subtitle">
               반도체 센서 데이터를 활용한 결함 예측: 데이터 전처리, SMOTE, 차원 축소 및 최적화 기법을 활용한 통합 머신러닝 솔루션
-              <br><br>
+            </p>
+            <p class="project-content" id="proj2Content">
               센서 신호를 활용해 SECOM 데이터셋 기반 반도체 제조공정 이상 탐지 모델을 구축한 프로젝트입니다. 결측치 보완, SMOTE를 통한 클래스 불균형 극복, PCA 및 통계 기반 피처 선택으로 효과적인 차원 축소를 수행하고, GridSearchCV로 최적 분류기를 도출하는 통합 파이프라인을 제안하여 높은 Accuracy와 낮은 오탐률(FPR)을 달성함으로써 실무 적용 가능성을 높였습니다.
             </p>
             <div class="card-buttons">
@@ -72,7 +74,7 @@
               <a href="https://github.com/Seongjin74/Efficient-Semiconductor-Anomaly-Detection" class="btn code" target="_blank">코드</a>
             </div>
           </div>
-          <!-- Project 3: SLDT -->
+          <!-- Project 3: SLDT (변경 없음) -->
           <div class="project-card">
             <h3>SLDT (Sign Language Detection Translator)</h3>
             <p id="proj3Desc">
@@ -83,7 +85,7 @@
               <a href="#" class="btn code disabled">코드</a>
             </div>
           </div>
-          <!-- Project 4: Probabilistic-Language-Identification -->
+          <!-- Project 4: Probabilistic-Language-Identification (변경 없음) -->
           <div class="project-card">
             <h3>Probabilistic-Language-Identification</h3>
             <p id="proj4Desc">
@@ -94,7 +96,7 @@
               <a href="https://github.com/Seongjin74/Probabilistic-Language-Identification" class="btn code" target="_blank">코드</a>
             </div>
           </div>
-          <!-- Project 5: UW-Path-Finder -->
+          <!-- Project 5: UW-Path-Finder (변경 없음) -->
           <div class="project-card">
             <h3>UW-Path-Finder</h3>
             <p id="proj5Desc">
@@ -153,6 +155,7 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
+    // 언어 전환용 번역 텍스트 (첫 두 프로젝트는 재목/소재목/내용으로 분리)
     const translations = {
       kor: {
         navAbout: "소개",
@@ -160,8 +163,12 @@
         navContact: "연락하기",
         aboutGreeting: "안녕하세요! 👋",
         projectsTitle: "💡 프로젝트",
-        proj1Desc: "증강 데이터 생성과 반지도학습 기법을 결합해 다양한 웨이퍼 결함 유형을 분류하는 딥러닝 모델 구축\n\n제한된 라벨 데이터를 효과적으로 활용하기 위해 준지도 학습 기법을 적용한 프로젝트로, FixMatch 알고리즘을 기반으로 pseudo-label 생성과 약한/강한 증강 전략, 특히 autoencoder를 통한 재구성 기법을 결합하여 반도체 제조 공정의 웨이퍼 결함 탐지 문제를 해결하였습니다. 간결한 CNN 모델을 활용해 지도학습 대비 약 2~3% 높은 테스트 정확도를 달성하며, 라벨이 없는 데이터를 활용해 준지도 학습의 효과를 극대화할 수 있음을 입증하였습니다.",
-        proj2Desc: "반도체 센서 데이터를 활용한 결함 예측: 데이터 전처리, SMOTE, 차원 축소 및 최적화 기법을 활용한 통합 머신러닝 솔루션\n\n센서 신호를 활용해 SECOM 데이터셋 기반 반도체 제조공정 이상 탐지 모델을 구축한 프로젝트입니다. 결측치 보완, SMOTE를 통한 클래스 불균형 극복, PCA 및 통계 기반 피처 선택으로 효과적인 차원 축소를 수행하고, GridSearchCV로 최적 분류기를 도출하는 통합 파이프라인을 제안하여 높은 Accuracy와 낮은 오탐률(FPR)을 달성함으로써 실무 적용 가능성을 높였습니다.",
+        proj1Title: "Wafer-Defect-Classification",
+        proj1Subtitle: "증강 데이터 생성과 반지도학습 기법을 결합해 다양한 웨이퍼 결함 유형을 분류하는 딥러닝 모델 구축",
+        proj1Content: "제한된 라벨 데이터를 효과적으로 활용하기 위해 준지도 학습 기법을 적용한 프로젝트로, FixMatch 알고리즘을 기반으로 pseudo-label 생성과 약한/강한 증강 전략, 특히 autoencoder를 통한 재구성 기법을 결합하여 반도체 제조 공정의 웨이퍼 결함 탐지 문제를 해결하였습니다. 간결한 CNN 모델을 활용해 지도학습 대비 약 2~3% 높은 테스트 정확도를 달성하며, 라벨이 없는 데이터를 활용해 준지도 학습의 효과를 극대화할 수 있음을 입증하였습니다.",
+        proj2Title: "Efficient-Semiconductor-Anomaly-Detection",
+        proj2Subtitle: "반도체 센서 데이터를 활용한 결함 예측: 데이터 전처리, SMOTE, 차원 축소 및 최적화 기법을 활용한 통합 머신러닝 솔루션",
+        proj2Content: "센서 신호를 활용해 SECOM 데이터셋 기반 반도체 제조공정 이상 탐지 모델을 구축한 프로젝트입니다. 결측치 보완, SMOTE를 통한 클래스 불균형 극복, PCA 및 통계 기반 피처 선택으로 효과적인 차원 축소를 수행하고, GridSearchCV로 최적 분류기를 도출하는 통합 파이프라인을 제안하여 높은 Accuracy와 낮은 오탐률(FPR)을 달성함으로써 실무 적용 가능성을 높였습니다.",
         proj3Desc: "웹캠을 통해 수어를 감지하고 번역하는 프로젝트",
         proj4Desc: "베이즈 추론을 활용해 텍스트가 영어인지 스페인어인지 판별하는 시스템",
         proj5Desc: "위스콘신 대학교 매디슨 캠퍼스 내 건물 간 최단 경로를 다익스트라 알고리즘으로 찾는 Java 기반 애플리케이션",
@@ -175,8 +182,12 @@
         navContact: "Contact",
         aboutGreeting: "Hello! 👋",
         projectsTitle: "💡 Projects",
-        proj1Desc: "Building a deep learning model that classifies various wafer defect types by combining augmented data generation and semi-supervised learning techniques. This project applies semi-supervised learning to effectively utilize limited labeled data. It resolves wafer defect detection in semiconductor manufacturing by integrating pseudo-label generation based on the FixMatch algorithm, weak/strong augmentation strategies, and a reconstruction technique using an autoencoder. By employing a concise CNN model, it achieves about 2-3% higher test accuracy compared to supervised learning, demonstrating the maximized effect of semi-supervised learning using unlabeled data.",
-        proj2Desc: "An integrated machine learning solution for defect prediction using semiconductor sensor data: Data preprocessing, SMOTE, dimensionality reduction, and optimization techniques. This project builds an anomaly detection model for semiconductor manufacturing processes based on the SECOM dataset using sensor signals. It proposes an integrated pipeline that addresses missing value imputation, class imbalance with SMOTE, effective dimensionality reduction via PCA and statistical feature selection, and optimal classifier selection using GridSearchCV, achieving high accuracy and low false positive rate (FPR) for practical application.",
+        proj1Title: "Wafer-Defect-Classification",
+        proj1Subtitle: "Building a deep learning model that classifies various wafer defect types by combining augmented data generation and semi-supervised learning techniques",
+        proj1Content: "This project applies semi-supervised learning to effectively utilize limited labeled data. It resolves wafer defect detection in semiconductor manufacturing by integrating pseudo-label generation based on the FixMatch algorithm, weak/strong augmentation strategies, and a reconstruction technique using an autoencoder. By employing a concise CNN model, it achieves about 2-3% higher test accuracy compared to supervised learning, demonstrating the maximized effect of semi-supervised learning using unlabeled data.",
+        proj2Title: "Efficient-Semiconductor-Anomaly-Detection",
+        proj2Subtitle: "An integrated machine learning solution for defect prediction using semiconductor sensor data: Data preprocessing, SMOTE, dimensionality reduction, and optimization techniques",
+        proj2Content: "This project builds an anomaly detection model for semiconductor manufacturing processes based on the SECOM dataset using sensor signals. It proposes an integrated pipeline that addresses missing value imputation, class imbalance with SMOTE, effective dimensionality reduction via PCA and statistical feature selection, and optimal classifier selection using GridSearchCV, achieving high accuracy and low false positive rate (FPR) for practical application.",
         proj3Desc: "A project that detects and translates sign language via webcam",
         proj4Desc: "A system that probabilistically determines whether a given text is in English or Spanish using Bayesian Inference",
         proj5Desc: "A Java-based application that finds the shortest path between buildings on the University of Wisconsin-Madison campus using Dijkstra's Algorithm",
@@ -193,16 +204,29 @@
       document.getElementById('navContact').textContent = t.navContact;
       document.getElementById('aboutGreeting').textContent = t.aboutGreeting;
       document.getElementById('projectsTitle').textContent = t.projectsTitle;
-      document.getElementById('proj1Desc').textContent = t.proj1Desc;
-      document.getElementById('proj2Desc').textContent = t.proj2Desc;
+      
+      // 프로젝트 1 (첫번째 카드)
+      const projCard1 = document.querySelectorAll('.projects-grid .project-card')[0];
+      projCard1.querySelector('.project-title').textContent = t.proj1Title;
+      projCard1.querySelector('.project-subtitle').textContent = t.proj1Subtitle;
+      projCard1.querySelector('.project-content').textContent = t.proj1Content;
+      
+      // 프로젝트 2 (두번째 카드)
+      const projCard2 = document.querySelectorAll('.projects-grid .project-card')[1];
+      projCard2.querySelector('.project-title').textContent = t.proj2Title;
+      projCard2.querySelector('.project-subtitle').textContent = t.proj2Subtitle;
+      projCard2.querySelector('.project-content').textContent = t.proj2Content;
+      
+      // 나머지 프로젝트들
       document.getElementById('proj3Desc').textContent = t.proj3Desc;
       document.getElementById('proj4Desc').textContent = t.proj4Desc;
       document.getElementById('proj5Desc').textContent = t.proj5Desc;
-      document.getElementById('contactTitle').textContent = t.contactTitle;
       
+      document.getElementById('contactTitle').textContent = t.contactTitle;
       document.querySelectorAll('.btn.read-more').forEach(btn => btn.textContent = t.readMore);
       document.querySelectorAll('.btn.code').forEach(btn => btn.textContent = t.code);
       
+      // PDF 링크 업데이트
       if (lang === 'kor') {
         document.getElementById('wdcReadMore').href = "WDC_Kor.pdf";
         document.getElementById('esadReadMore').href = "ESAD_Kor.pdf";
