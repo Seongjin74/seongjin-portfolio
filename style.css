@@ -139,15 +139,29 @@ body.dark-mode {
   transform: translateY(-5px);
   box-shadow: 0 4px 12px var(--card-shadow);
 }
-.project-card h3 {
+
+/* 재목, 소재목, 내용 구분 스타일 */
+.project-title {
+  font-size: 1.4rem;
+  font-weight: 600;
   margin-bottom: 0.5rem;
-  font-size: 1.3rem;
+}
+.project-subtitle {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
   color: var(--primary);
 }
-.project-card p {
-  font-size: 0.95rem;
+.project-content {
+  font-size: 0.9rem;
   margin-bottom: 1rem;
   color: var(--text);
+}
+
+.project-card h3 {
+  margin-bottom: 0.5rem;
+}
+.project-card p {
+  margin-bottom: 1rem;
 }
 .card-buttons {
   display: flex;
