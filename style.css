@@ -37,12 +37,6 @@ body.dark-mode {
   --card-shadow: rgba(0, 0, 0, 0.4);
 }
 
-body.dark-mode .section.about h1,
-body.dark-mode .section.projects h2,
-body.dark-mode .project-content {
-  color: #fff;
-}
-
 .container {
   width: 90%;
   max-width: 1200px;
@@ -247,4 +241,10 @@ body.dark-mode .project-content {
     flex-wrap: wrap;
     justify-content: center;
   }
+}
+
+body.dark-mode .section.about h1,
+body.dark-mode .section.projects h2,
+body.dark-mode .project-content {
+  color: #fff !important;
 }
