@@ -245,6 +245,7 @@ body.dark-mode {
 
 body.dark-mode .section.about h1,
 body.dark-mode .section.projects h2,
+body.dark-mode .project-subtitle,
 body.dark-mode .project-content {
   color: #fff !important;
 }
