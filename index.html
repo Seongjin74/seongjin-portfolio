@@ -35,8 +35,8 @@
   <main>
     <section id="about" class="section about">
       <div class="container">
-        <h1 id="aboutGreeting">안녕하세요! 👋</h1>
-        <p>
+        <h1 id="aboutGreeting">안녕하세요</h1>
+        <p id="aboutText">
           저는 <strong>Computer Science 와 Data Science</strong>를 공부하며 다양한 프로젝트에 도전하고 있습니다.
         </p>
       </div>
@@ -78,32 +78,32 @@
           <div class="project-card">
             <h3>SLDT (Sign Language Detection Translator)</h3>
             <p id="proj3Desc">
-              웹캠을 통해 수어를 감지하고 번역하는 프로젝트
+              본 프로젝트는 깊이 있는 학습 기법 중 하나인 LSTM(Long Short-Term Memory) 신경망을 활용하여, 수화 제스처를 실시간 음성으로 변환하는 시스템을 개발하는 것을 목표로 합니다. 이를 통해 청각 장애인과 비장애인 사이의 소통 격차를 줄이고, 모두가 보다 원활하게 소통할 수 있도록 돕고자 합니다.
             </p>
             <div class="card-buttons">
               <a href="SLDVT.html" class="btn read-more">자세히 보기</a>
-              <a href="#" class="btn code disabled">코드</a>
+              <a href="https://github.com/Seongjin74/Sign-Language-Detection-Voice-Translator" class="btn code" target="_blank">코드</a>
             </div>
           </div>
-          <!-- Project 4: Probabilistic-Language-Identification (변경 없음) -->
+          <!-- Project 4: Probabilistic-Language-Identification -->
           <div class="project-card">
             <h3>Probabilistic-Language-Identification</h3>
             <p id="proj4Desc">
               베이즈 추론을 활용해 텍스트가 영어인지 스페인어인지 판별하는 시스템
             </p>
             <div class="card-buttons">
-              <a href="project4.html" class="btn read-more">자세히 보기</a>
+             
               <a href="https://github.com/Seongjin74/Probabilistic-Language-Identification" class="btn code" target="_blank">코드</a>
             </div>
           </div>
-          <!-- Project 5: UW-Path-Finder (변경 없음) -->
+          <!-- Project 5: UW-Path-Finder -->
           <div class="project-card">
             <h3>UW-Path-Finder</h3>
             <p id="proj5Desc">
               위스콘신 대학교 매디슨 캠퍼스 내 건물 간 최단 경로를 다익스트라 알고리즘으로 찾는 Java 기반 애플리케이션
             </p>
             <div class="card-buttons">
-              <a href="project5.html" class="btn read-more">자세히 보기</a>
+             
               <a href="https://github.com/Seongjin74/UW-Path-Finder" class="btn code" target="_blank">코드</a>
             </div>
           </div>
@@ -155,21 +155,22 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
-    // 언어 전환용 번역 텍스트 (첫 두 프로젝트는 재목/소재목/내용으로 분리)
+    // 
     const translations = {
       kor: {
         navAbout: "소개",
         navProjects: "프로젝트",
         navContact: "연락하기",
         aboutGreeting: "안녕하세요! 👋",
+        aboutText: "저는 <strong>Computer Science 와 Data Science</strong>를 공부하며 다양한 프로젝트에 도전하고 있습니다.",
         projectsTitle: "💡 프로젝트",
         proj1Title: "Wafer-Defect-Classification",
         proj1Subtitle: "증강 데이터 생성과 반지도학습 기법을 결합해 다양한 웨이퍼 결함 유형을 분류하는 딥러닝 모델 구축",
         proj1Content: "제한된 라벨 데이터를 효과적으로 활용하기 위해 준지도 학습 기법을 적용한 프로젝트로, FixMatch 알고리즘을 기반으로 pseudo-label 생성과 약한/강한 증강 전략, 특히 autoencoder를 통한 재구성 기법을 결합하여 반도체 제조 공정의 웨이퍼 결함 탐지 문제를 해결하였습니다. 간결한 CNN 모델을 활용해 지도학습 대비 약 2~3% 높은 테스트 정확도를 달성하며, 라벨이 없는 데이터를 활용해 준지도 학습의 효과를 극대화할 수 있음을 입증하였습니다.",
         proj2Title: "Efficient-Semiconductor-Anomaly-Detection",
         proj2Subtitle: "반도체 센서 데이터를 활용한 결함 예측: 데이터 전처리, SMOTE, 차원 축소 및 최적화 기법을 활용한 통합 머신러닝 솔루션",
-        proj2Content: "센서 신호를 활용해 SECOM 데이터셋 기반 반도체 제조공정 이상 탐지 모델을 구축한 프로젝트입니다. 결측치 보완, SMOTE를 통한 클래스 불균형 극복, PCA 및 통계 기반 피처 선택으로 효과적인 차원 축소를 수행하고, GridSearchCV로 최적 분류기를 도출하는 통합 파이프라인을 제안하여 높은 Accuracy와 낮은 오탐률(FPR)을 달성했습니다.",
-        proj3Desc: "웹캠을 통해 수어를 감지하고 번역하는 프로젝트",
+        proj2Content: "센서 신호 데이터를 활용해 SECOM 데이터셋 기반 반도체 제조공정 이상 탐지 모델을 구축한 프로젝트입니다. 결측치 보완, SMOTE를 통한 클래스 불균형 극복, PCA 및 통계 기반 피처 선택으로 효과적인 차원 축소를 수행하고, GridSearchCV로 최적 분류기를 도출하는 통합 파이프라인을 제안하여 높은 Accuracy와 낮은 오탐률(FPR)을 달성했습니다.",
+        proj3Desc: "본 프로젝트는 깊이 있는 학습 기법 중 하나인 LSTM(Long Short-Term Memory) 신경망을 활용하여, 수화 제스처를 실시간 음성으로 변환하는 시스템을 개발하는 것을 목표로 합니다. 이를 통해 청각 장애인과 비장애인 사이의 소통 격차를 줄이고, 모두가 보다 원활하게 소통할 수 있도록 돕고자 합니다.",
         proj4Desc: "베이즈 추론을 활용해 텍스트가 영어인지 스페인어인지 판별하는 시스템",
         proj5Desc: "위스콘신 대학교 매디슨 캠퍼스 내 건물 간 최단 경로를 다익스트라 알고리즘으로 찾는 Java 기반 애플리케이션",
         contactTitle: "📬 연락하기",
@@ -181,6 +182,7 @@
         navProjects: "Projects",
         navContact: "Contact",
         aboutGreeting: "Hello! 👋",
+        aboutText: "I study <strong>Computer Science and Data Science</strong> and am challenging various projects.",
         projectsTitle: "💡 Projects",
         proj1Title: "Wafer-Defect-Classification",
         proj1Subtitle: "Building a deep learning model that classifies various wafer defect types by combining augmented data generation and semi-supervised learning techniques",
@@ -188,7 +190,7 @@
         proj2Title: "Efficient-Semiconductor-Anomaly-Detection",
         proj2Subtitle: "An integrated machine learning solution for defect prediction using semiconductor sensor data: Data preprocessing, SMOTE, dimensionality reduction, and optimization techniques",
         proj2Content: "This project builds an anomaly detection model for semiconductor manufacturing processes based on the SECOM dataset using sensor signals. It proposes an integrated pipeline that addresses missing value imputation, class imbalance with SMOTE, effective dimensionality reduction via PCA and statistical feature selection, and optimal classifier selection using GridSearchCV, achieving high accuracy and low false positive rate (FPR) for practical application.",
-        proj3Desc: "A project that detects and translates sign language via webcam",
+        proj3Desc: "This project aims to develop a system that converts sign language gestures into real-time speech using an LSTM (Long Short-Term Memory) neural network—one of the deep learning techniques. Through this, it seeks to reduce communication gaps between the hearing impaired and others, enabling smoother communication for everyone.",
         proj4Desc: "A system that probabilistically determines whether a given text is in English or Spanish using Bayesian Inference",
         proj5Desc: "A Java-based application that finds the shortest path between buildings on the University of Wisconsin-Madison campus using Dijkstra's Algorithm",
         contactTitle: "📬 Contact",
@@ -203,21 +205,22 @@
       document.getElementById('navProjects').textContent = t.navProjects;
       document.getElementById('navContact').textContent = t.navContact;
       document.getElementById('aboutGreeting').textContent = t.aboutGreeting;
+      document.getElementById('aboutText').innerHTML = t.aboutText;
       document.getElementById('projectsTitle').textContent = t.projectsTitle;
       
-      // 프로젝트 1 (첫번째 카드)
+      // 프로젝트 1 
       const projCard1 = document.querySelectorAll('.projects-grid .project-card')[0];
       projCard1.querySelector('.project-title').textContent = t.proj1Title;
       projCard1.querySelector('.project-subtitle').textContent = t.proj1Subtitle;
       projCard1.querySelector('.project-content').textContent = t.proj1Content;
       
-      // 프로젝트 2 (두번째 카드)
+      // 프로젝트 2
       const projCard2 = document.querySelectorAll('.projects-grid .project-card')[1];
       projCard2.querySelector('.project-title').textContent = t.proj2Title;
       projCard2.querySelector('.project-subtitle').textContent = t.proj2Subtitle;
       projCard2.querySelector('.project-content').textContent = t.proj2Content;
       
-      // 나머지 프로젝트들
+      
       document.getElementById('proj3Desc').textContent = t.proj3Desc;
       document.getElementById('proj4Desc').textContent = t.proj4Desc;
       document.getElementById('proj5Desc').textContent = t.proj5Desc;
@@ -226,7 +229,7 @@
       document.querySelectorAll('.btn.read-more').forEach(btn => btn.textContent = t.readMore);
       document.querySelectorAll('.btn.code').forEach(btn => btn.textContent = t.code);
       
-      // PDF 링크 업데이트
+      
       if (lang === 'kor') {
         document.getElementById('wdcReadMore').href = "WDC_Kor.pdf";
         document.getElementById('esadReadMore').href = "ESAD_Kor.pdf";
