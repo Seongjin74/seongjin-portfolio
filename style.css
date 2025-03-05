@@ -140,7 +140,6 @@ body.dark-mode {
   box-shadow: 0 4px 12px var(--card-shadow);
 }
 
-/* 재목, 소재목, 내용 구분 스타일 */
 .project-title {
   font-size: 1.4rem;
   font-weight: 600;
