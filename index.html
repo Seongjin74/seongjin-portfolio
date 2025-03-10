@@ -67,7 +67,7 @@
               반도체 센서 데이터를 활용한 결함 예측: 데이터 전처리, SMOTE, 차원 축소 및 최적화 기법을 활용한 통합 머신러닝 솔루션
             </p>
             <p class="project-content" id="proj2Content">
-              본 연구는 SECOM 데이터셋을 활용하여 반도체 제조공정의 이상 탐지 문제를 해결하기 위한 통합 머신러닝 파이프라인을 제안합니다. 센서 신호 데이터를 전처리하여 결측치 보완, 불필요한 피처 제거 및 다중공선성 완화를 수행한 후, SMOTE 기법으로 클래스 불균형 문제를 극복하였습니다. 이어서 PCA와 통계 기반 피처 선택을 통해 고차원 데이터를 효과적으로 축소하여 노이즈를 줄이고 모델 학습의 효율성을 높였으며, 최종적으로 GridSearchCV를 통해 다양한 분류기의 하이퍼파라미터를 최적화하여 높은 예측 정확도와 낮은 오탐률(FPR)을 달성하였습니다. 
+              본 연구는 SECOM 데이터셋을 활용하여 반도체 제조공정의 이상 탐지 문제를 해결하기 위한 통합 머신러닝 파이프라인을 제안합니다. 센서 신호 데이터를 전처리하여 결측치 보완, 불필요한 피처 제거 및 다중공선성 완화를 수행한 후, SMOTE 기법으로 클래스 불균형 문제를 극복하였습니다. 이어서 PCA와 통계 기반 피처 선택을 통해 고차원 데이터를 효과적으로 축소하여 노이즈를 줄이고 모델 학습의 효율성을 높였으며, 최종적으로 GridSearchCV를 통해 다양한 분류기의 하이퍼파라미터를 최적화하여 높은 예측 정확도와 낮은 오탐률(FPR)을 달성하였습니다.
             </p>
             <div class="card-buttons">
               <a href="ESAD_Kor.pdf" id="esadReadMore" class="btn read-more" target="_blank">자세히 보기</a>
@@ -87,7 +87,7 @@
               <a href="https://github.com/Disaster-Data-Analysis/Disaster-Data-Mapping" id="climateReadMore" class="btn read-more" target="_blank">코드</a>
             </div>
           </div>
-          <!-- Project 4: SLDT  -->
+          <!-- Project 4: SLDT -->
           <div class="project-card">
             <h3>SLDT (Sign Language Detection Translator)</h3>
             <p id="proj3Desc">
@@ -98,7 +98,20 @@
               <a href="https://github.com/Seongjin74/Sign-Language-Detection-Voice-Translator" class="btn code" target="_blank">코드</a>
             </div>
           </div>
-          <!-- Project 5: Probabilistic-Language-Identification -->
+          <!-- Project 5: Impact-of-Age-Height-Handedness-on-Tennis-Match-Outcomes -->
+          <div class="project-card">
+            <h3 class="project-title" id="projATPTitle">Impact-of-Age-Height-Handedness-on-Tennis-Match-Outcomes</h3>
+            <p class="project-subtitle" id="projATPSubtitle">
+              테니스 경기 결과 분석: ATP 2022 데이터를 활용한 인과관계 및 회귀 분석 솔루션
+            </p>
+            <p class="project-content" id="projATPContent">
+              ATP 2022 경기 데이터를 기반으로, 테니스 선수들의 나이, 키, 그리고 손잡이 여부가 승리 확률에 미치는 영향을 단순 및 다중 회귀분석, 상관 분석 등 다양한 통계 기법을 활용해 평가한 프로젝트입니다. 본 분석은 회귀모델과 신뢰구간 분석을 통해 나이와 키의 유의미한 영향력을 정량화하고, 손잡이 여부에 따른 승리 확률 차이를 도출하여 경기 결과에 미치는 주요 요인들을 심도 있게 파악하였습니다.
+            </p>
+            <div class="card-buttons">
+              <a href="Project_ATP.html" id="atpReadMore" class="btn read-more" target="_blank">자세히 보기</a>
+            </div>
+          </div>
+          <!-- Project 6: Probabilistic-Language-Identification -->
           <div class="project-card">
             <h3>Probabilistic-Language-Identification</h3>
             <p id="proj4Desc">
@@ -108,7 +121,7 @@
               <a href="https://github.com/Seongjin74/Probabilistic-Language-Identification" class="btn code" target="_blank">코드</a>
             </div>
           </div>
-          <!-- Project 6: UW-Path-Finder -->
+          <!-- Project 7: UW-Path-Finder -->
           <div class="project-card">
             <h3>UW-Path-Finder</h3>
             <p id="proj5Desc">
@@ -184,6 +197,9 @@
         projClimateSubtitle: "기후 및 지역 데이터 기반 사고 유형 예측: 전처리 자동화, 신경망 모델 최적화 및 실시간 API 서비스를 통한 종단간 머신러닝 시스템",
         projClimateContent: "기상 데이터와 지역 정보를 활용해 산불, 홍수, 폭풍 등 사고 유형을 예측하는 딥러닝 솔루션입니다. 범주형 변수 인코딩, 특성 스케일링, 상태별 기후 패턴 분석을 통한 데이터 강화를 수행하고, TensorFlow 기반의 심층 신경망을 구축하였습니다. FastAPI로 구현된 추론 API 서비스와 모델 버저닝 시스템을 결합하여 실제 운영 환경에 즉시 배포 가능한 architecture를 제안했습니다.",
         proj3Desc: "본 프로젝트는 깊이 있는 학습 기법 중 하나인 LSTM(Long Short-Term Memory) 신경망을 활용하여, 수화 제스처를 실시간 음성으로 변환하는 시스템을 개발하는 것을 목표로 합니다. 이를 통해 청각 장애인과 비장애인 사이의 소통 격차를 줄이고, 모두가 보다 원활하게 소통할 수 있도록 돕고자 합니다.",
+        projATPTitle: "Impact-of-Age-Height-Handedness-on-Tennis-Match-Outcomes",
+        projATPSubtitle: "테니스 경기 결과 분석: ATP 2022 데이터를 활용한 인과관계 및 회귀 분석 솔루션",
+        projATPContent: "ATP 2022 경기 데이터를 기반으로, 테니스 선수들의 나이, 키, 그리고 손잡이 여부가 승리 확률에 미치는 영향을 단순 및 다중 회귀분석, 상관 분석 등 다양한 통계 기법을 활용해 평가한 프로젝트입니다. 본 분석은 회귀모델과 신뢰구간 분석을 통해 나이와 키의 유의미한 영향력을 정량화하고, 손잡이 여부에 따른 승리 확률 차이를 도출하여 경기 결과에 미치는 주요 요인들을 심도 있게 파악하였습니다.",
         proj4Desc: "베이즈 추론을 활용해 텍스트가 영어인지 스페인어인지 판별하는 시스템",
         proj5Desc: "위스콘신 대학교 매디슨 캠퍼스 내 건물 간 최단 경로를 다익스트라 알고리즘으로 찾는 Java 기반 애플리케이션",
         contactTitle: "연락하기",
@@ -207,6 +223,9 @@
         projClimateSubtitle: "Climate and Region Data Based Incident Type Prediction: Automated preprocessing, neural network model optimization, and real-time API services in an end-to-end machine learning system",
         projClimateContent: "This deep learning solution predicts incidents such as wildfires, floods, and storms by leveraging meteorological and regional data. It performs data augmentation through categorical variable encoding, feature scaling, and state-wise climate pattern analysis, and builds a deep neural network using TensorFlow. The architecture integrates an inference API service implemented with FastAPI and a model versioning system, enabling immediate deployment in operational environments.",
         proj3Desc: "This project aims to develop a system that converts sign language gestures into real-time speech using an LSTM (Long Short-Term Memory) neural network—one of the deep learning techniques. Through this, it seeks to reduce communication gaps between the hearing impaired and others, enabling smoother communication for everyone.",
+        projATPTitle: "Impact-of-Age-Height-Handedness-on-Tennis-Match-Outcomes",
+        projATPSubtitle: "Tennis Match Outcome Analysis: A Causal and Regression Analysis Solution using ATP 2022 Data",
+        projATPContent: "Based on ATP 2022 match data, this project evaluates the impact of players' age, height, and handedness on winning probabilities using various statistical techniques including simple and multiple regression analysis and correlation analysis. The analysis quantifies the significant influence of age and height through regression models and confidence interval analysis, and derives differences in winning probabilities based on handedness to deeply understand the key factors affecting match outcomes.",
         proj4Desc: "A system that probabilistically determines whether a given text is in English or Spanish using Bayesian Inference",
         proj5Desc: "A Java-based application that finds the shortest path between buildings on the University of Wisconsin-Madison campus using Dijkstra's Algorithm",
         contactTitle: "Contact",
@@ -242,15 +261,26 @@
       projCardClimate.querySelector('.project-subtitle').textContent = t.projClimateSubtitle;
       projCardClimate.querySelector('.project-content').textContent = t.projClimateContent;
       
-      // 프로젝트 3 (SLDT)
+      // 프로젝트 SLDT
       document.getElementById('proj3Desc').textContent = t.proj3Desc;
-      // 프로젝트 4 (Probabilistic-Language-Identification)
+      
+      // 프로젝트 ATP (Impact-of-Age-Height-Handedness-on-Tennis-Match-Outcomes)
+      document.getElementById('projATPTitle').textContent = t.projATPTitle;
+      document.getElementById('projATPSubtitle').textContent = t.projATPSubtitle;
+      document.getElementById('projATPContent').textContent = t.projATPContent;
+      document.getElementById('atpReadMore').href = "Project_ATP.html";
+      
+      // 프로젝트 Probabilistic-Language-Identification
       document.getElementById('proj4Desc').textContent = t.proj4Desc;
-      // 프로젝트 5 (UW-Path-Finder)
+      // 프로젝트 UW-Path-Finder
       document.getElementById('proj5Desc').textContent = t.proj5Desc;
       
       document.getElementById('contactTitle').textContent = t.contactTitle;
-      document.querySelectorAll('.btn.read-more').forEach(btn => btn.textContent = t.readMore);
+      document.querySelectorAll('.btn.read-more').forEach(btn => {
+        if (!btn.hasAttribute('id')) {
+          btn.textContent = t.readMore;
+        }
+      });
       document.querySelectorAll('.btn.code').forEach(btn => btn.textContent = t.code);
       
       if (lang === 'kor') {
