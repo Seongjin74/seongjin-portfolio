@@ -74,7 +74,20 @@
               <a href="https://github.com/Seongjin74/Efficient-Semiconductor-Anomaly-Detection" class="btn code" target="_blank">코드</a>
             </div>
           </div>
-          <!-- Project 3: SLDT  -->
+          <!-- Project 3: Climate-Driven Incident-Prediction-Framework -->
+          <div class="project-card">
+            <h3 class="project-title">Climate-Driven Incident-Prediction-Framework</h3>
+            <p class="project-subtitle" id="projClimateSubtitle">
+              기후 및 지역 데이터 기반 사고 유형 예측: 전처리 자동화, 신경망 모델 최적화 및 실시간 API 서비스를 통한 종단간 머신러닝 시스템
+            </p>
+            <p class="project-content" id="projClimateContent">
+              기상 데이터와 지역 정보를 활용해 산불, 홍수, 폭풍 등 사고 유형을 예측하는 딥러닝 솔루션입니다. 범주형 변수 인코딩, 특성 스케일링, 상태별 기후 패턴 분석을 통한 데이터 강화를 수행하고, TensorFlow 기반의 심층 신경망을 구축하였습니다. FastAPI로 구현된 추론 API 서비스와 모델 버저닝 시스템을 결합하여 실제 운영 환경에 즉시 배포 가능한 architecture를 제안했습니다.
+            </p>
+            <div class="card-buttons">
+              <a href="https://github.com/Disaster-Data-Analysis/Disaster-Data-Mapping" id="climateReadMore" class="btn read-more" target="_blank">코드</a>
+            </div>
+          </div>
+          <!-- Project 4: SLDT  -->
           <div class="project-card">
             <h3>SLDT (Sign Language Detection Translator)</h3>
             <p id="proj3Desc">
@@ -85,25 +98,23 @@
               <a href="https://github.com/Seongjin74/Sign-Language-Detection-Voice-Translator" class="btn code" target="_blank">코드</a>
             </div>
           </div>
-          <!-- Project 4: Probabilistic-Language-Identification -->
+          <!-- Project 5: Probabilistic-Language-Identification -->
           <div class="project-card">
             <h3>Probabilistic-Language-Identification</h3>
             <p id="proj4Desc">
               베이즈 추론을 활용해 텍스트가 영어인지 스페인어인지 판별하는 시스템
             </p>
             <div class="card-buttons">
-             
               <a href="https://github.com/Seongjin74/Probabilistic-Language-Identification" class="btn code" target="_blank">코드</a>
             </div>
           </div>
-          <!-- Project 5: UW-Path-Finder -->
+          <!-- Project 6: UW-Path-Finder -->
           <div class="project-card">
             <h3>UW-Path-Finder</h3>
             <p id="proj5Desc">
               위스콘신 대학교 매디슨 캠퍼스 내 건물 간 최단 경로를 다익스트라 알고리즘으로 찾는 Java 기반 애플리케이션
             </p>
             <div class="card-buttons">
-             
               <a href="https://github.com/Seongjin74/UW-Path-Finder" class="btn code" target="_blank">코드</a>
             </div>
           </div>
@@ -155,7 +166,6 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
-    // 
     const translations = {
       kor: {
         navAbout: "소개",
@@ -170,6 +180,9 @@
         proj2Title: "Efficient-Semiconductor-Anomaly-Detection",
         proj2Subtitle: "반도체 센서 데이터를 활용한 결함 예측: 데이터 전처리, SMOTE, 차원 축소 및 최적화 기법을 활용한 통합 머신러닝 솔루션",
         proj2Content: "센서 신호 데이터를 활용해 SECOM 데이터셋 기반 반도체 제조공정 이상 탐지 모델을 구축한 프로젝트입니다. 결측치 보완, SMOTE를 통한 클래스 불균형 극복, PCA 및 통계 기반 피처 선택으로 효과적인 차원 축소를 수행하고, GridSearchCV로 최적 분류기를 도출하는 통합 파이프라인을 제안하여 높은 Accuracy와 낮은 오탐률(FPR)을 달성했습니다.",
+        projClimateTitle: "Climate-Driven Incident-Prediction-Framework",
+        projClimateSubtitle: "기후 및 지역 데이터 기반 사고 유형 예측: 전처리 자동화, 신경망 모델 최적화 및 실시간 API 서비스를 통한 종단간 머신러닝 시스템",
+        projClimateContent: "기상 데이터와 지역 정보를 활용해 산불, 홍수, 폭풍 등 사고 유형을 예측하는 딥러닝 솔루션입니다. 범주형 변수 인코딩, 특성 스케일링, 상태별 기후 패턴 분석을 통한 데이터 강화를 수행하고, TensorFlow 기반의 심층 신경망을 구축하였습니다. FastAPI로 구현된 추론 API 서비스와 모델 버저닝 시스템을 결합하여 실제 운영 환경에 즉시 배포 가능한 architecture를 제안했습니다.",
         proj3Desc: "본 프로젝트는 깊이 있는 학습 기법 중 하나인 LSTM(Long Short-Term Memory) 신경망을 활용하여, 수화 제스처를 실시간 음성으로 변환하는 시스템을 개발하는 것을 목표로 합니다. 이를 통해 청각 장애인과 비장애인 사이의 소통 격차를 줄이고, 모두가 보다 원활하게 소통할 수 있도록 돕고자 합니다.",
         proj4Desc: "베이즈 추론을 활용해 텍스트가 영어인지 스페인어인지 판별하는 시스템",
         proj5Desc: "위스콘신 대학교 매디슨 캠퍼스 내 건물 간 최단 경로를 다익스트라 알고리즘으로 찾는 Java 기반 애플리케이션",
@@ -190,6 +203,9 @@
         proj2Title: "Efficient-Semiconductor-Anomaly-Detection",
         proj2Subtitle: "An integrated machine learning solution for defect prediction using semiconductor sensor data: Data preprocessing, SMOTE, dimensionality reduction, and optimization techniques",
         proj2Content: "This project builds an anomaly detection model for semiconductor manufacturing processes based on the SECOM dataset using sensor signals. It proposes an integrated pipeline that addresses missing value imputation, class imbalance with SMOTE, effective dimensionality reduction via PCA and statistical feature selection, and optimal classifier selection using GridSearchCV, achieving high accuracy and low false positive rate (FPR) for practical application.",
+        projClimateTitle: "Climate-Driven Incident-Prediction-Framework",
+        projClimateSubtitle: "Climate and Region Data Based Incident Type Prediction: Automated preprocessing, neural network model optimization, and real-time API services in an end-to-end machine learning system",
+        projClimateContent: "This deep learning solution predicts incidents such as wildfires, floods, and storms by leveraging meteorological and regional data. It performs data augmentation through categorical variable encoding, feature scaling, and state-wise climate pattern analysis, and builds a deep neural network using TensorFlow. The architecture integrates an inference API service implemented with FastAPI and a model versioning system, enabling immediate deployment in operational environments.",
         proj3Desc: "This project aims to develop a system that converts sign language gestures into real-time speech using an LSTM (Long Short-Term Memory) neural network—one of the deep learning techniques. Through this, it seeks to reduce communication gaps between the hearing impaired and others, enabling smoother communication for everyone.",
         proj4Desc: "A system that probabilistically determines whether a given text is in English or Spanish using Bayesian Inference",
         proj5Desc: "A Java-based application that finds the shortest path between buildings on the University of Wisconsin-Madison campus using Dijkstra's Algorithm",
@@ -220,24 +236,33 @@
       projCard2.querySelector('.project-subtitle').textContent = t.proj2Subtitle;
       projCard2.querySelector('.project-content').textContent = t.proj2Content;
       
+      // 프로젝트 Climate-Driven Incident-Prediction-Framework
+      const projCardClimate = document.querySelectorAll('.projects-grid .project-card')[2];
+      projCardClimate.querySelector('.project-title').textContent = t.projClimateTitle;
+      projCardClimate.querySelector('.project-subtitle').textContent = t.projClimateSubtitle;
+      projCardClimate.querySelector('.project-content').textContent = t.projClimateContent;
       
+      // 프로젝트 3 (SLDT)
       document.getElementById('proj3Desc').textContent = t.proj3Desc;
+      // 프로젝트 4 (Probabilistic-Language-Identification)
       document.getElementById('proj4Desc').textContent = t.proj4Desc;
+      // 프로젝트 5 (UW-Path-Finder)
       document.getElementById('proj5Desc').textContent = t.proj5Desc;
       
       document.getElementById('contactTitle').textContent = t.contactTitle;
       document.querySelectorAll('.btn.read-more').forEach(btn => btn.textContent = t.readMore);
       document.querySelectorAll('.btn.code').forEach(btn => btn.textContent = t.code);
       
-      
       if (lang === 'kor') {
         document.getElementById('wdcReadMore').href = "WDC_Kor.pdf";
         document.getElementById('esadReadMore').href = "ESAD_Kor.pdf";
         document.getElementById('langToggle').textContent = "ENG";
+        document.getElementById('climateReadMore').href = "https://github.com/Disaster-Data-Analysis/Disaster-Data-Mapping";
       } else {
         document.getElementById('wdcReadMore').href = "WDC_Eng.pdf";
         document.getElementById('esadReadMore').href = "ESAD_Eng.pdf";
         document.getElementById('langToggle').textContent = "KOR";
+        document.getElementById('climateReadMore').href = "https://github.com/Disaster-Data-Analysis/Disaster-Data-Mapping";
       }
       localStorage.setItem('lang', lang);
     }
