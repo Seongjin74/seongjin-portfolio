@@ -297,6 +297,12 @@
       document.getElementById('projATPSubtitle').textContent = t.projATPSubtitle;
       document.getElementById('projATPContent').textContent = t.projATPContent;
       
+      const projATPBtn = document.getElementById('projATPReadMore');
+      projATPBtn.textContent = t.readMore;
+      projATPBtn.href = lang === 'kor'
+        ? 'Project_ATP.html'       
+        : 'Project_ATP.html';   
+
       // Project 7: Probabilistic-Language-Identification
       document.getElementById('proj4Desc').textContent = t.proj4Desc;
       
